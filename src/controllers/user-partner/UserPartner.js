@@ -1,6 +1,6 @@
-import {Axios} from "../Axios";
-import {socket} from "../Socket";
-import {getPlatform, getBrowser} from "../helpers/stringHelper";
+import {Axios} from "../../Axios";
+import {socket} from "../../Socket";
+import {getPlatform, getBrowser} from "../../helpers/stringHelper";
 
 export function setBan(userPartnerId, time, reason){//todo backendi vra validacnel, stex el inch vor tex
     socket.emit('permission.ban', [userPartnerId, time, reason]);

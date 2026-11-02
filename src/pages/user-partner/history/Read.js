@@ -1,11 +1,11 @@
 import {getPage} from "../../../controllers/user-partner/HistoriesController";
-import {useState, useEffect, useRef, forwardRef} from "react";
+import {useState, useEffect} from "react";
 import {dateRange} from "../../../helpers/dateHelper";
 
 import HistoryChat from "./HistoryChat";
-import {getVisitor} from "../../../controllers/UserPartner";
+import {getVisitor} from "../../../controllers/user-partner/UserPartner";
 import {getTranscript} from "../../../controllers/user-partner/ChatsController";
-import {DeleteSvg, EditSvg, LoadingGif} from "../../../Icons";
+import {LoadingGif} from "../../../Icons";
 
 import Pagination from "./Pagination";
 import Select from "../../../components/Select";

@@ -1,6 +1,6 @@
 import {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {updateNotification} from "../../../../controllers/profile/Agents";
+import {updateNotification} from "../../../../controllers/user-partner/ProfileController";
 import {setFlashPopUp} from "../../../../reducers/flashPopUpSlice";
 import {updateFlag} from "../../../../reducers/user-partner/profileSlice";
 import {LoadingGif} from "../../../../Icons";

@@ -2,7 +2,7 @@ import {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {updateProfile} from "../../../../reducers/user-partner/profileSlice";
 import {setPopUp} from "../../../../reducers/popUpSlice";
-import {update} from "../../../../controllers/profile/Agents";
+import {update} from "../../../../controllers/user-partner/ProfileController";
 import {setFlashPopUp} from "../../../../reducers/flashPopUpSlice"
 import Input from "../../../../components/Input";
 

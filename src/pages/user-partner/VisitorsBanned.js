@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {getVisitorsBanned, setBan} from "../../controllers/UserPartner";
+import {getVisitorsBanned, setBan} from "../../controllers/user-partner/UserPartner";
 import {setVisitorsBanned} from "../../reducers/user-partner/visitorsBannedSlice";
 import {LoadingGif} from "../../Icons";
 import InputSearch from "../../components/InputSearch";

@@ -3,8 +3,26 @@ import {Response} from '../../Controller';
 import Joi from 'joi';
 import {IMAGE_EXT} from '../../Constants';
 
+const name = Joi.string().min(3).max(32).required();
+const email = Joi.string().email({tlds:{allow: false}}).required();
+const flagName = Joi.string().valid('messageFlag', 'requestFlag').required();
+const flagValue = Joi.number().min(0).max(1);
 const profileImage = Joi.string().label('image').valid(...IMAGE_EXT);
 const dashboardImage = Joi.string().label('image').valid(...IMAGE_EXT);
+
+export function updateNotification(data){
+    const {error} = Joi.object({flagName, flagValue})
+        .validate(data, {abortEarly: false});
+
+    return error ? Response({error}) : Axios.put('user-partners/notifications', data);
+}
+
+export function update(data){
+    const {error} = Joi.object({name, email})
+        .validate(data, {abortEarly: false});
+
+    return error ? Response({error}) : Axios.put('user-partners', data);
+}
 
 export function updateProfileImage(file){
     const {error} = Joi.object({profileImage})

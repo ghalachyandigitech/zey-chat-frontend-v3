@@ -2,7 +2,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {setFile, setTransfer} from "../../../controllers/user-partner/ChatsController";
 import {setFlashPopUp} from "../../../reducers/flashPopUpSlice";
 import {setChatStatus} from "../../../reducers/user-partner/chatsSlice";
-import {setBan} from "../../../controllers/UserPartner";
+import {setBan} from "../../../controllers/user-partner/UserPartner";
 import {setPopUp} from "../../../reducers/popUpSlice";
 
 const VisitorInfoButtons = ({_id, collection}) => {

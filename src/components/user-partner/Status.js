@@ -1,4 +1,4 @@
-import {updateStatus} from "../../controllers/UserPartner";
+import {updateStatus} from "../../controllers/user-partner/UserPartner";
 import {useDispatch, useSelector} from "react-redux";
 import {useState} from "react";
 import {USER_PARTNERS_STATUSES} from "../../Constants";

@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {setPopUp} from "../../../reducers/popUpSlice"
 import {setCompanionBanUpdatedAt} from "../../../reducers/user-partner/chatsSlice"
 import Input from "../../../components/Input";
-import {setBan} from "../../../controllers/UserPartner";
+import {setBan} from "../../../controllers/user-partner/UserPartner";
 
 const Ban = () => {
     const dispatch = useDispatch();

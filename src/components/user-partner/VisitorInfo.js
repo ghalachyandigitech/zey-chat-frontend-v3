@@ -1,6 +1,6 @@
 import {useState, useEffect} from "react";
 import {useDispatch} from "react-redux";
-import {updateNote} from "../../controllers/UserPartner";
+import {updateNote} from "../../controllers/user-partner/UserPartner";
 import {setFlashPopUp} from "../../reducers/flashPopUpSlice";
 import Textarea from "../Textarea";
 import {LoadingGif} from "../../Icons";

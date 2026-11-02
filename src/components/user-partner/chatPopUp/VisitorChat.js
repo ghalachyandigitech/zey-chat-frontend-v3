@@ -3,7 +3,7 @@ import PastChats from "./PastChats";
 import Messages from "./Messages";
 import Messaging from "./Messaging";
 import VisitorInfo from "../VisitorInfo";
-import {getVisitor} from "../../../controllers/UserPartner";
+import {getVisitor} from "../../../controllers/user-partner/UserPartner";
 import VisitorInfoButtons from "./VisitorInfoButtons";
 import ChatCreated from "./ChatCreated";
 import Tabs from "../../Tabs";

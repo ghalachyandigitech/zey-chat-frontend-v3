@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {Outlet, useNavigate, useLocation} from "react-router-dom";
 import {PAGES_NAMES} from "../Constants";
 import {VisitorsSvg, HistorySvg, HomeSvg, LogOutSvg, MenuOpenedSvg} from "../Icons";
-import {auth} from "../controllers/UserPartner";
+import {auth} from "../controllers/user-partner/UserPartner";
 import {setUserPartner, deleteUserPartner} from "../reducers/user-partner/userPartnerSlice";
 import {setAgent} from "../reducers/user-partner/agentsSlice";
 import {setProfile, deleteProfile} from "../reducers/user-partner/profileSlice";
@@ -39,7 +39,7 @@ import ProfileUpdateInfo from "../pages/user-partner/profile/Update/Info";
 import WidgetsCreate from "../pages/user-partner/widgets/Create";
 import WidgetsDelete from "../pages/user-partner/widgets/Delete";
 
-import {logOut} from "../controllers/UserPartner";
+import {logOut} from "../controllers/user-partner/UserPartner";
 
 const UserPartner = () => {
     const dispatch = useDispatch();
