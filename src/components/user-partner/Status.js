@@ -8,7 +8,7 @@ const Status = ({statusFlag}) => {
     const dispatch = useDispatch();
     const [statusList, setStatusList] = useState(false);
     const {status, dashboardImage} = useSelector(state => state.profile);
-console.log(status);
+
     return (
         <div onClick={() => setStatusList(!statusList)}>
             {statusFlag && <span className={"status status-" + USER_PARTNERS_STATUSES[status]}> </span>}

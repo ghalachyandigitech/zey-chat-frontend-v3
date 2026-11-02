@@ -9,7 +9,6 @@ const ChatPopUp = () => {
     const dispatch = useDispatch();
     const {_id, collection, companionId} = useSelector(state => state.chatPopup);
 
-    console.log('ChatPopUp component');
     if(collection) return (
         <div className="pop-up" onClick={e => e.target.classList.contains('pop-up') ? dispatch(chatPopupClose()): ''}>
             <div className="chat-container">

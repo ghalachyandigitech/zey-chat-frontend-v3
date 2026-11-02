@@ -6,16 +6,14 @@ import {chatPopupClose} from "../../../reducers/user-partner/chatPopupSlice";
 const Header = ({_id, collection}) => {
     const dispatch = useDispatch();
     const chat = useSelector(state => state.chats.list[collection+_id]);
-    const {name, styles} = chat.widget;
+    const {name, styles: {headerLeftColor, headerDegree, headerRightColor}} = chat.widget;
 
     return (
-        <div style={{background: !styles.headerLeftColor && 'black' ||
-                `linear-gradient(${styles.headerDegree}deg, ${styles.headerLeftColor}, ${styles.headerRightColor})`
-            }} className={`header`}>
+        <div className={`header`} style={{background: !headerLeftColor && 'black' ||
+                `linear-gradient(${headerDegree}deg, ${headerLeftColor}, ${headerRightColor})`
+            }}>
             <span>{chat.companionName}</span>
-            <CloseSvg onButtonClick={() => {
-                dispatch(setPopUp(['chats/end', chat]))
-            }} />
+            <CloseSvg onButtonClick={() => dispatch(setPopUp(['chats/end', chat]))} />
             <MinimizeSvg onButtonClick={() => dispatch(chatPopupClose())} />
         </div>
     )

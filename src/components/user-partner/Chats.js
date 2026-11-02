@@ -20,7 +20,7 @@ const Chats = () => {
                         <span className="name">{companionName}</span>
                         <CloseSvg width={30} fill="white" onButtonClick={e => {
                             e.stopPropagation();
-                            dispatch(setPopUp(['chats/end', {_id, companionId, companionName, collection, userPartnerId}])); //todo auto chater@ kara??
+                            dispatch(setPopUp(['chats/end', {_id, companionId, companionName, collection, userPartnerId}]));
                         }} />
                     </div>
                 </div>

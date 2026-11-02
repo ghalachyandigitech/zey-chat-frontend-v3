@@ -50,7 +50,6 @@ const KeyboardController = ({chatRequestsRef}) => {
     const {_id, collection} = useSelector(state => state.chatPopup);
     const list = useSelector(state => state.chats.list);
 
-    console.log('HotKeysButton component');
     useEffect(() => {
         hotKeys.dispatch = dispatch;
         hotKeys.chatRequestsRef = chatRequestsRef;

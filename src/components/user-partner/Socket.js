@@ -14,13 +14,10 @@ import {setVisitors, setVisitor, deleteVisitor, deleteVisitors, updateVisitor} f
 import {deleteVisitorBanned, setVisitorBanned} from "../../reducers/user-partner/visitorsBannedSlice";
 import {DATE_OPTIONS} from "../../Constants";
 
-console.log('Socket file');
 const Socket = ({config, buttonLogoutRef}) => {
     const dispatch = useDispatch();
 //todo socket connecti jamanak hash@ uxarkel auth jwt userPartnerLogin
     useEffect(() => {
-        console.log('Socket useEffect');
-
         connectSocket(config);
 
         function recover([chatInfo, companionStatus, messages, companionUnread, unread, companionCreated], collection){
@@ -33,7 +30,7 @@ const Socket = ({config, buttonLogoutRef}) => {
                 unread: unread,
                 messages: [[], messages[1]],
             };
-console.log(chatInfo);
+
             const chat = {
                 _id: chatInfo._id,
                 collection: collection ? collection : ['', 'waiting', 'served', 'served', 'internals'][chatInfo.status],
