@@ -1,0 +1,83 @@
+.left-menu * {
+    scrollbar-color: white black;
+    scrollbar-width: thin;
+}
+.left-menu{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px 10px 10px;
+    color: white;
+    border: 1px solid;
+    max-width: 15%;
+    min-width: 200px;
+    background-color: rgb(27, 27, 27);
+}
+.left-menu > .header{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.left-menu > .header > svg{
+    margin-left: auto;
+    width: 24px;
+    min-width: 24px;
+}
+.left-menu > .header > span{
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.left-menu > hr{
+    margin: 20px 0;
+    border: none;
+    height: 1px;
+    background-color: rgba(180, 180, 180, .3);
+}
+.left-menu .items > .item{
+    padding-left: 34px;
+}
+.left-menu .items{
+    overflow: hidden;
+}
+.left-menu .items-off{
+    max-height: 0;
+}
+
+.left-menu .active{
+    background-color: rgb(15, 61, 86) !important;
+}
+
+.left-menu .item{
+    display: flex;
+    align-items: center;
+    border: 1px solid blue;
+    min-height: 36px;
+    border-radius: 5px;
+    background-color: black;
+    cursor: pointer;
+    margin-bottom: 10px;
+    gap: 5px;
+    padding: 0 8px;
+}
+.left-menu .arrow-down{
+    margin-left: auto;
+}
+.left-menu .item svg{
+    width: 18px;
+    max-height: 18px;
+    fill: white;
+}
+.left-menu > .team{
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.left-menu > .team > .member{
+    min-height: 35px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+}

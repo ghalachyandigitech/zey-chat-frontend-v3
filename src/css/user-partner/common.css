@@ -1,0 +1,390 @@
+.input-switch {
+    display: inline-block;
+    height: 12px;
+    position: relative;
+    width: 40px;
+    margin-right: 3px;
+}
+.input-switch input {
+    display: none;
+}
+.input-switch .slider {
+    background-color: rgb(158,158,158);
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+    border-radius: 34px;
+    height: 14px;
+}
+.input-switch .slider:before{
+    background-color: #3f51b5;
+    bottom: -3px;
+    content: "";
+    height: 20px;
+    left: 0;
+    position: absolute;
+    transition: .4s;
+    width: 20px;
+    border-radius: 50%;
+}
+.input-switch input:checked + .slider{
+    background-color: rgba(63,81,183,0.5);
+}
+.input-switch input:checked + .slider:before {
+    transform: translateX(20px);
+}
+body{
+    margin: 0;
+}
+.input {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.input input{
+    border-radius: 5px;
+    padding: 0 10px;
+    height: 36px;
+}
+
+.input-default{
+    width: 200px;
+}
+
+.input-mini{
+    width: 135px;
+}
+
+.input-date-mini{
+    width: 111px;
+}
+
+.input label{
+    position: absolute;
+    top: 13px;
+    left: 10px;
+    pointer-events: none;
+    color: grey;
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    background-color: white;
+    display: flex;
+    height: 15px;
+    align-items: flex-end;
+}
+
+.input textarea:focus+label,
+.input textarea:valid+label{
+    transform: translateY(-19px);
+}
+
+.input input:focus+label,
+.input input:valid+label {
+    transform: translateY(-19px);
+}
+
+.input-search{
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    border-bottom: 2px outset;
+    border-radius: 6px;
+}
+
+.input-search svg{
+    width: 25px;
+    fill: #0f3d56;
+}
+
+.input-search > .unset:hover{
+    fill: grey;
+}
+
+.input-color{
+    padding: 0;
+    border: none;
+    height: 36px;
+}
+
+.textarea > textarea{
+    resize: none;
+    border-radius: 5px;
+    border: 2px solid;
+    padding: 10px 10px 0 10px;
+    flex: 1;
+}
+
+.textarea{
+    height: 200px;
+}
+
+.select{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.select > label{
+    position: absolute;
+    top: -6px;
+    left: 10px;
+    color: grey;
+    background-color: white;
+    display: flex;
+    height: 15px;
+    align-items: flex-end;
+}
+
+.select > select{
+    height: 40px;
+    border-radius: 5px;
+    background-color: #eeeeee;
+    padding: 0 12px;
+    border: 2px solid;
+}
+
+.button{
+    height: 40px;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 5px;
+    background-color: #0f3d56;
+    padding: 0 20px;
+    color: white;
+    cursor: pointer;
+    width: max-content;
+}
+.button:hover{
+    box-shadow: 0 14px 26px -12px rgba(15, 61, 86, 0.42), 0 4px 23px 0 rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(15, 61, 86, 0.2);
+}
+
+.button-1:hover{
+    background-color: #dcdada;
+}
+
+.button-1{
+    border-radius: 2px;
+    align-items: center;
+    gap: 2px;
+    cursor: default;
+    display: flex;
+    padding: 2px;
+    height: 25px;
+}
+
+
+.button-wait{
+    cursor: wait !important;
+}
+
+.input-group{
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 3px;
+}
+
+.input-groups-column{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.table{
+    border-radius: 5px;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+    flex: 1;
+    min-height: 110px;
+    background-color: white;
+}
+
+.table > div{
+    text-align: center;
+    color: gray;
+}
+
+.table .actions{
+    display: flex;
+    justify-content: center;
+    gap: 3px;
+    align-items: center;
+}
+
+.table .actions svg{
+    cursor: pointer;
+}
+
+.table > table{
+    border-spacing: unset;
+    width: 100%;
+    padding: 25px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.table tr:not(:last-of-type) td{
+    border-bottom: 1px solid rgb(224, 224, 224);
+}
+
+.table tr{
+    cursor: default;
+}
+
+.table td{
+    padding: 8px 0;
+}
+
+.table th{
+    margin-right: 50px;
+    width: 50px;
+    border-bottom: 1px solid rgb(224, 224, 224);
+    white-space: nowrap;
+}
+
+.circle-image{
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    background-color: gray;
+    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle-image > img{
+    align-self: stretch;
+}
+
+.input-number{
+    width: 38px;
+    height: 25px;
+    padding: 0 5px;
+    margin: 4px 0;
+}
+
+.label-number{
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    padding-right: 20px;
+}
+
+.input-radio{
+    display: flex;
+    align-items: end;
+    gap: 2px;
+    padding: 2px 5px 0 0;
+}
+
+.input-radio > input{
+    width: 20px;
+    height: 20px;
+    margin: 0;
+}
+
+.tabs{
+    padding: 5px 10px 2px;
+    border-bottom: 2px solid #0f3d56;
+}
+
+.tabs > button{
+    height: 30px;
+    min-width: 75px;
+    background-color: #0f3d56;
+    color: white;
+}
+
+.tabs > .active{
+    opacity: 0.9;
+    border: 4px inset #396f8d;
+}
+
+.tabs > button:not(.active):hover{
+    opacity: 0.9;
+    background-color: #0f3d56;
+}
+
+.tabs > button:first-child{
+    border-bottom-left-radius: 7px;
+    border-top-left-radius: 7px;
+}
+
+.tabs > button:last-child{
+    border-bottom-right-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+.datePicker{
+    display: inline-block;
+}
+
+.pagination{
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+    padding: 3px;
+}
+
+.cover{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.2);
+}
+
+.error{
+    font-size: 12px;
+    color: red;
+}
+
+.file-container{
+    display: flex;
+    gap: 15px;
+    position: relative;
+    padding: 15px 15px 0 0;
+}
+
+.file-container > div{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+
+.file-container .file{
+    max-height: 90px;
+    max-width: 95px;
+    border: 1px solid;
+}
+
+.file-container img, .file-container video{
+    max-width: 120px;
+    max-height: 85px;
+}
+
+.file-container .close-file-reader{
+    position: absolute;
+    top: -10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, .8);
+    right: -10px;
+    border: 1px solid;
+}
+
+.file-container .close-file-reader:hover{
+    color: red;
+    fill: red;
+}

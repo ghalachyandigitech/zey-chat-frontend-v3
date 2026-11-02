@@ -1,0 +1,19 @@
+.user-guest{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+.user-guest > .container{
+    width: 30%;
+    min-width: 360px;
+    max-width: 450px;
+    background-color: white;
+}
+
+.user-guest > .container > .header{
+    height: 265px;
+    padding: 5px;
+}
+

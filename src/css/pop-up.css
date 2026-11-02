@@ -1,0 +1,54 @@
+.pop-up{
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.pop-up .header{
+    height: 42px;
+    color: white;
+    padding: 0 5px;
+    align-content: center;
+}
+
+.pop-up .header-default{
+    background-color: #0f3d56;
+}
+
+.pop-up .header-warning{
+    background-color: #d42626;
+}
+
+.pop-up .header-black{
+    background-color: black;
+}
+
+.pop-up .header > svg{
+    width: 35px;
+    height: 25px;
+    fill: white;
+    border: 1px solid grey;
+    cursor: pointer;
+    border-radius: 50%;
+    float: right;
+}
+
+.pop-up .header > svg:hover{
+    fill: red;
+}
+
+.pop-up > .container{
+    border-radius: 5px;
+    min-width: 400px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
+}
+.pop-up > .container > .body{
+    padding: 10px;
+}

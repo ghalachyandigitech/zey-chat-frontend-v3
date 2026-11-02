@@ -1,0 +1,4 @@
+.attach-file > div{
+    display: flex;
+    align-items: center;
+}

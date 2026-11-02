@@ -1,0 +1,92 @@
+.hot-keys > pre{
+    margin-left: 25px;
+    font-size: 17px;
+}
+
+.hot-keys > h3{
+    color: #0f3d56;
+}
+
+
+.notifications{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 15px;
+}
+
+.notifications span{
+    min-width: 120px;
+    display: inline-block;
+}
+
+
+
+
+/*todo visitor-info*/
+.visitor-info{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid green;
+    flex: 5 1;
+}
+.visitor-info > .user-partner-info,.location-info,.referrers{
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid;
+}
+
+.visitor-info .location-info > div{
+    display: flex;
+    padding: 5px;
+}
+.visitor-info .location-info .title{
+    font-size: 11px;
+    margin-right: 2px;
+    white-space: nowrap;
+}
+.visitor-info .location-info .description{
+    margin-top: 1px;
+    word-break: break-word;
+    font-size: 10px;
+}
+.visitor-info .referrers{
+    overflow-y: auto;
+    height: 95px;
+    word-break: break-all;
+}
+.visitor-info .referrers > div{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.visitor-info .buttons{
+    display: flex;
+    gap: 5px;
+}
+.visitor-info .buttons > button{
+    background-color: #0f3d56;
+    border-radius: 5px;
+    color: white;
+    min-height: 30px;
+    min-width: 60px;
+    cursor: pointer;
+}
+.visitor-info .user-partner-info{
+    height: 55px;
+    display: flex;
+}
+.visitor-info .user-partner-info > div{
+    flex: 1;
+    display: grid;
+    text-align: center;
+    align-items: center;
+    border-right: 1px solid;
+}
+.visitor-info .user-partner-info > div:last-child{
+    border-right: none;
+}
+/*todo visitor info*/
+/*todo status container*/
+
+/*todo ban button*/

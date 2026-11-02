@@ -1,0 +1,368 @@
+.dropdown {
+    width: 64px;
+    height: 34px;
+    position: relative;
+    border: 1px solid;
+}
+
+.dropdown > .selected {
+    height: 100%;
+}
+
+.dropdown > .options {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    border: 1px solid;
+    background-color: aqua;
+    z-index: 1;
+}
+
+/*widget*/
+.widget-container {
+    width: 350px;
+}
+
+#typing-animation{
+    position: relative;
+    min-height: 15px;
+    width: 30px;
+}
+
+#typing-animation > svg{
+    width: 30px;
+    position: absolute;
+    top: -5px;
+}
+
+.widget-container > .header {
+    margin-bottom: -20px;
+    height: 80px;
+    padding-left: 25px;
+    padding-top: 20px;
+    color: white;
+    border-radius: 25px 25px 0 0;
+}
+
+.widget .toggle {
+    margin-top: 5px;
+    display: flex;
+    background-color: green;
+    width: 66px;
+    height: 66px;
+    justify-content: center;
+}
+
+.widget > .toggle > svg {
+    width: 40px;
+}
+
+.widget-container > .header > img {
+    border-radius: 50%;
+    margin-right: 10px;
+    width: 50px;
+    float: left;
+    box-shadow: rgba(0, 0, 0, 0.75) 0 0 8px;
+}
+
+.widget-container > .header > div {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+
+.widget-container > .header > div > div {
+    display: flex;
+    align-items: baseline;
+}
+
+.widget-container > .body {
+    display: flex;
+    flex-direction: column;
+    height: 432px;
+    border: 1px solid;
+    border-radius: 25px 25px 8px 8px;
+    position: relative;
+    padding: 0 10px;
+}
+
+.widget-container .messages {
+    word-break: break-word;
+    flex: 2;
+    flex-direction: column;
+    display: flex;
+    overflow-y: auto;
+    border: 1px solid;
+    margin: 10px 0;
+}
+
+.widget-container .message {
+    max-width: 80%;
+    align-self: center;
+    text-align: center;
+}
+
+.widget-container .message > .text {
+    position: relative;
+    border-radius: 10px;
+    line-height: 1.25em;
+    padding: 3px 5px;
+}
+
+.widget-container .message span {
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0);
+    border-bottom: 13px solid;
+}
+
+.widget-container .message-end {
+    margin-right: 16px;
+    align-self: flex-end;
+    text-align: unset;
+}
+
+.widget-container .message-end > .time {
+    text-align: right;
+}
+
+.widget-container .message-end > .text {
+    border-radius: 10px 10px 0 10px;
+}
+
+.widget-container .message-end span {
+    right: -14px;
+    border-right: 15px solid transparent;
+}
+
+.widget-container .message-start {
+    margin-left: 16px;
+    align-self: flex-start;
+    text-align: unset;
+}
+
+.widget-container .message-start > .text {
+    border-radius: 10px 10px 10px 0;
+}
+
+.widget-container .message-start span {
+    left: -14px;
+    border-left: 15px solid transparent;
+}
+
+.widget-container .messaging {
+    border: 1px solid;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.widget-container form {
+    display: flex;
+    flex: 1;
+    padding: 10px 0 3px 0;
+    gap: 10px;
+}
+
+.widget-container form > textarea {
+    resize: none;
+    border-radius: 10px;
+    width: 100%;
+    padding: 10px;
+}
+
+.widget-container form > .buttons {
+    display: grid;
+    align-items: center;
+}
+
+.widget-container form > .buttons > svg {
+    width: 25px;
+    height: 25px;
+}
+
+.widget-container .messaging > .end-chat > svg {
+    width: 15px;
+    height: 15px;
+}
+
+.widget-script {
+    border: 1px solid;
+    padding: 5px;
+    word-break: break-all;
+    height: 355px;
+    overflow-y: auto;
+    margin: 10px 0;
+}
+
+.widget-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 10px;
+}
+
+.widget-appearance {
+    display: flex;
+    flex-direction: column;
+}
+
+.widget-settings {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.widget-settings > .row {
+    display: flex;
+}
+
+.widget-settings > .row > span {
+    min-width: 200px;
+}
+
+.widget-settings > .row .note {
+    font-size: 13px;
+}
+
+.widget-settings > .row label {
+    display: flex;
+}
+
+.widget-appearance .row {
+    display: flex;
+    align-items: flex-start;
+    min-height: 37px;
+}
+
+.widget-appearance .row > div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.widget-appearance .background-gradients label {
+    width: 50px;
+    display: block;
+    height: 50px;
+    margin: 2px;
+    border-radius: 10px;
+}
+
+.widget-appearance .background-gradients label.inset {
+    border: 5px inset #0078d4;
+}
+
+.widget-appearance .background-gradients label.outset {
+    border: 5px outset #0078d4;
+}
+
+.widget-appearance .background-gradients {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.widget-appearance .background-gradients .selected {
+    background-color: #0078d4;
+}
+
+.widget-appearance .row > span {
+    font-size: 14px;
+    font-weight: 700;
+    min-width: 130px;
+}
+
+/*widget*/
+
+
+.history-body {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+    gap: 5px;
+}
+
+.history-chat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+}
+
+.history-chat-body {
+    flex: 1;
+    min-height: 0;
+    flex-direction: column;
+    display: flex;
+    background-color: white;
+}
+
+.requests-button {
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: black;
+    display: flex;
+    gap: 15px;
+    padding: 0 10px;
+    cursor: pointer;
+    min-height: 40px;
+    align-items: center;
+}
+
+.requests-button > svg {
+    width: 16px;
+}
+
+.requests-button > .count {
+    background-color: red;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    margin-left: auto;
+    align-content: center;
+}
+
+
+.visitors-view svg {
+    width: 25px;
+    fill: #0f3d56;
+}
+
+.visitors-view-type {
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: white;
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+}
+
+.visitors-view-type .user-agent {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.visitors-view-type > .header {
+    justify-content: flex-end;
+    display: flex;
+    align-items: center;
+}
+
+.visitors-view-type .count {
+    width: 32px;
+    height: 32px;
+    align-content: center;
+    text-align: center;
+    border-radius: 50%;
+    background-color: brown;
+}
+
+.visitors-view-type .name {
+    margin-right: auto;
+}
+
+/*visitors view*/

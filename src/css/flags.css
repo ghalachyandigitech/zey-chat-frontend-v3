@@ -1,0 +1,1136 @@
+.flags_small{
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+}
+.flags_small-AD, .flags_small-AE,
+.flags_small-AF, .flags_small-AG, .flags_small-AI,
+.flags_small-AL, .flags_small-AM, .flags_small-AN,
+.flags_small-AO, .flags_small-AQ, .flags_small-AR,
+.flags_small-AS, .flags_small-AT, .flags_small-AU,
+.flags_small-AW, .flags_small-AX, .flags_small-AZ,
+.flags_small-BA, .flags_small-BB, .flags_small-BD,
+.flags_small-BE, .flags_small-BF, .flags_small-BG,
+.flags_small-BH, .flags_small-BI, .flags_small-BJ,
+.flags_small-BL, .flags_small-BM, .flags_small-BN,
+.flags_small-BO, .flags_small-BR, .flags_small-BS,
+.flags_small-BT, .flags_small-BW, .flags_small-BY,
+.flags_small-BZ, .flags_small-CA, .flags_small-CC,
+.flags_small-CD, .flags_small-CF, .flags_small-CG,
+.flags_small-CH, .flags_small-CI, .flags_small-CK,
+.flags_small-CL, .flags_small-CM, .flags_small-CN,
+.flags_small-CO, .flags_small-CR, .flags_small-CU,
+.flags_small-CV, .flags_small-CW, .flags_small-CX,
+.flags_small-CY, .flags_small-CZ, .flags_small-DE,
+.flags_small-DJ, .flags_small-DK, .flags_small-DM,
+.flags_small-DO, .flags_small-DZ, .flags_small-EC,
+.flags_small-EE, .flags_small-EG, .flags_small-EH,
+.flags_small-ER, .flags_small-ES, .flags_small-ET,
+.flags_small-EU, .flags_small-FI, .flags_small-FJ,
+.flags_small-FK, .flags_small-FM, .flags_small-FO,
+.flags_small-FR, .flags_small-GA, .flags_small-GB,
+.flags_small-GD, .flags_small-GE, .flags_small-GG,
+.flags_small-GH, .flags_small-GI, .flags_small-GL,
+.flags_small-GM, .flags_small-GN, .flags_small-GQ,
+.flags_small-GR, .flags_small-GS, .flags_small-GT,
+.flags_small-GU, .flags_small-GW, .flags_small-GY,
+.flags_small-HK, .flags_small-HN, .flags_small-HR,
+.flags_small-HT, .flags_small-HU, .flags_small-IC,
+.flags_small-ID, .flags_small-IE, .flags_small-IL,
+.flags_small-IM, .flags_small-IN, .flags_small-IQ,
+.flags_small-IR, .flags_small-IS, .flags_small-IT,
+.flags_small-JE, .flags_small-JM, .flags_small-JO,
+.flags_small-JP, .flags_small-KE, .flags_small-KG,
+.flags_small-KH, .flags_small-KI, .flags_small-KM,
+.flags_small-KN, .flags_small-KP, .flags_small-KR,
+.flags_small-KW, .flags_small-KY, .flags_small-KZ,
+.flags_small-LA, .flags_small-LB, .flags_small-LC,
+.flags_small-LI, .flags_small-LK, .flags_small-LR,
+.flags_small-LS, .flags_small-LT, .flags_small-LU,
+.flags_small-LV, .flags_small-LY, .flags_small-MA,
+.flags_small-MC, .flags_small-MD, .flags_small-ME,
+.flags_small-MF, .flags_small-MG, .flags_small-MH,
+.flags_small-MK, .flags_small-ML, .flags_small-MM,
+.flags_small-MN, .flags_small-MO, .flags_small-MP,
+.flags_small-MQ, .flags_small-MR, .flags_small-MS,
+.flags_small-MT, .flags_small-MU, .flags_small-MV,
+.flags_small-MW, .flags_small-MX, .flags_small-MY,
+.flags_small-MZ, .flags_small-NA, .flags_small-NC,
+.flags_small-NE, .flags_small-NF, .flags_small-NG,
+.flags_small-NI, .flags_small-NL, .flags_small-NO,
+.flags_small-NP, .flags_small-NR, .flags_small-NU,
+.flags_small-NZ, .flags_small-OM, .flags_small-PA,
+.flags_small-PE, .flags_small-PF, .flags_small-PG,
+.flags_small-PH, .flags_small-PK, .flags_small-PL,
+.flags_small-PN, .flags_small-PR, .flags_small-PS,
+.flags_small-PT, .flags_small-PW, .flags_small-PY,
+.flags_small-QA, .flags_small-RO, .flags_small-RS,
+.flags_small-RU, .flags_small-RW, .flags_small-SA,
+.flags_small-SB, .flags_small-SC, .flags_small-SD,
+.flags_small-SE, .flags_small-SG, .flags_small-SH,
+.flags_small-SI, .flags_small-SK, .flags_small-SL,
+.flags_small-SM, .flags_small-SN, .flags_small-SO,
+.flags_small-SR, .flags_small-SS, .flags_small-ST,
+.flags_small-SV, .flags_small-SY, .flags_small-SZ,
+.flags_small-TC, .flags_small-TD, .flags_small-TF,
+.flags_small-TG, .flags_small-TH, .flags_small-TJ,
+.flags_small-TK, .flags_small-TL, .flags_small-TM,
+.flags_small-TN, .flags_small-TO, .flags_small-TR,
+.flags_small-TT, .flags_small-TV, .flags_small-TW,
+.flags_small-TZ, .flags_small-UA, .flags_small-UG,
+.flags_small-US, .flags_small-UY, .flags_small-UZ,
+.flags_small-VA, .flags_small-VC, .flags_small-VE,
+.flags_small-VG, .flags_small-VI, .flags_small-VN,
+.flags_small-VU, .flags_small-WF, .flags_small-WS,
+.flags_small-YE, .flags_small-YT, .flags_small-ZA,
+.flags_small-ZM, .flags_small-ZW, .flags_small-_abkhazia,
+.flags_small-_basque-country, .flags_small-_british-antarctic-territory, .flags_small-_commonwealth,
+.flags_small-GB-ENG, .flags_small-_gosquared, .flags_small-XK, .flags_small-_mars,
+.flags_small-_nagorno-karabakh, .flags_small-_nato, .flags_small-_northern-cyprus,
+.flags_small-_olympics, .flags_small-_red-cross, .flags_small-GB-SCL, .flags_small-_somaliland,
+.flags_small-_south-ossetia, .flags_small-_united-nations, .flags_small-_unknown, .flags_small-GB-WLS,
+.flags_small-EN {
+  background-image: url('../../public/flags_small.png');
+  background-repeat: no-repeat
+}
+
+.flags_small-AD {
+  background-position: 0 0
+}
+
+.flags_small-AE {
+  background-position: 0 -24px
+}
+
+.flags_small-AF {
+  background-position: 0 -48px
+}
+
+.flags_small-AG {
+  background-position: 0 -72px
+}
+
+.flags_small-AI {
+  background-position: 0 -96px
+}
+
+.flags_small-AL {
+  background-position: 0 -120px
+}
+
+.flags_small-AM {
+  background-position: 0 -144px
+}
+
+.flags_small-AN {
+  background-position: 0 -168px
+}
+
+.flags_small-AO {
+  background-position: 0 -192px
+}
+
+.flags_small-AQ {
+  background-position: 0 -216px
+}
+
+.flags_small-AR {
+  background-position: 0 -240px
+}
+
+.flags_small-AS {
+  background-position: 0 -264px
+}
+
+.flags_small-AT {
+  background-position: 0 -288px
+}
+
+.flags_small-AU {
+  background-position: 0 -312px
+}
+
+.flags_small-AW {
+  background-position: 0 -336px
+}
+
+.flags_small-AX {
+  background-position: 0 -360px
+}
+
+.flags_small-AZ {
+  background-position: 0 -384px
+}
+
+.flags_small-BA {
+  background-position: 0 -408px
+}
+
+.flags_small-BB {
+  background-position: 0 -432px
+}
+
+.flags_small-BD {
+  background-position: 0 -456px
+}
+
+.flags_small-BE {
+  background-position: 0 -480px
+}
+
+.flags_small-BF {
+  background-position: 0 -504px
+}
+
+.flags_small-BG {
+  background-position: 0 -528px
+}
+
+.flags_small-BH {
+  background-position: 0 -552px
+}
+
+.flags_small-BI {
+  background-position: 0 -576px
+}
+
+.flags_small-BJ {
+  background-position: 0 -600px
+}
+
+.flags_small-BL {
+  background-position: 0 -624px
+}
+
+.flags_small-BM {
+  background-position: 0 -648px
+}
+
+.flags_small-BN {
+  background-position: 0 -672px
+}
+
+.flags_small-BO {
+  background-position: 0 -696px
+}
+
+.flags_small-BR {
+  background-position: 0 -720px
+}
+
+.flags_small-BS {
+  background-position: 0 -744px
+}
+
+.flags_small-BT {
+  background-position: 0 -768px
+}
+
+.flags_small-BW {
+  background-position: 0 -792px
+}
+
+.flags_small-BY {
+  background-position: 0 -816px
+}
+
+.flags_small-BZ {
+  background-position: 0 -840px
+}
+
+.flags_small-CA {
+  background-position: 0 -864px
+}
+
+.flags_small-CC {
+  background-position: 0 -888px
+}
+
+.flags_small-CD {
+  background-position: 0 -912px
+}
+
+.flags_small-CF {
+  background-position: 0 -936px
+}
+
+.flags_small-CG {
+  background-position: 0 -960px
+}
+
+.flags_small-CH {
+  background-position: 0 -984px
+}
+
+.flags_small-CI {
+  background-position: 0 -1008px
+}
+
+.flags_small-CK {
+  background-position: 0 -1032px
+}
+
+.flags_small-CL {
+  background-position: 0 -1056px
+}
+
+.flags_small-CM {
+  background-position: 0 -1080px
+}
+
+.flags_small-CN {
+  background-position: 0 -1104px
+}
+
+.flags_small-CO {
+  background-position: 0 -1128px
+}
+
+.flags_small-CR {
+  background-position: 0 -1152px
+}
+
+.flags_small-CU {
+  background-position: 0 -1176px
+}
+
+.flags_small-CV {
+  background-position: 0 -1200px
+}
+
+.flags_small-CW {
+  background-position: 0 -1224px
+}
+
+.flags_small-CX {
+  background-position: 0 -1248px
+}
+
+.flags_small-CY {
+  background-position: 0 -1272px
+}
+
+.flags_small-CZ {
+  background-position: 0 -1296px
+}
+
+.flags_small-DE {
+  background-position: 0 -1320px
+}
+
+.flags_small-DJ {
+  background-position: 0 -1344px
+}
+
+.flags_small-DK {
+  background-position: 0 -1368px
+}
+
+.flags_small-DM {
+  background-position: 0 -1392px
+}
+
+.flags_small-DO {
+  background-position: 0 -1416px
+}
+
+.flags_small-DZ {
+  background-position: 0 -1440px
+}
+
+.flags_small-EC {
+  background-position: 0 -1464px
+}
+
+.flags_small-EE {
+  background-position: 0 -1488px
+}
+
+.flags_small-EG {
+  background-position: 0 -1512px
+}
+
+.flags_small-EH {
+  background-position: 0 -1536px
+}
+
+.flags_small-ER {
+  background-position: 0 -1560px
+}
+
+.flags_small-ES {
+  background-position: 0 -1584px
+}
+
+.flags_small-ET {
+  background-position: 0 -1608px
+}
+
+.flags_small-EU {
+  background-position: 0 -1632px
+}
+
+.flags_small-FI {
+  background-position: 0 -1656px
+}
+
+.flags_small-FJ {
+  background-position: 0 -1680px
+}
+
+.flags_small-FK {
+  background-position: 0 -1704px
+}
+
+.flags_small-FM {
+  background-position: 0 -1728px
+}
+
+.flags_small-FO {
+  background-position: 0 -1752px
+}
+
+.flags_small-FR {
+  background-position: 0 -1776px
+}
+
+.flags_small-GA {
+  background-position: 0 -1800px
+}
+
+.flags_small-EN,
+.flags_small-GB {
+  background-position: 0 -1824px
+}
+
+.flags_small-GD {
+  background-position: 0 -1848px
+}
+
+.flags_small-GE {
+  background-position: 0 -1872px
+}
+
+.flags_small-GG {
+  background-position: 0 -1896px
+}
+
+.flags_small-GH {
+  background-position: 0 -1920px
+}
+
+.flags_small-GI {
+  background-position: 0 -1944px
+}
+
+.flags_small-GL {
+  background-position: 0 -1968px
+}
+
+.flags_small-GM {
+  background-position: 0 -1992px
+}
+
+.flags_small-GN {
+  background-position: 0 -2016px
+}
+
+.flags_small-GQ {
+  background-position: 0 -2040px
+}
+
+.flags_small-GR {
+  background-position: 0 -2064px
+}
+
+.flags_small-GS {
+  background-position: 0 -2088px
+}
+
+.flags_small-GT {
+  background-position: 0 -2112px
+}
+
+.flags_small-GU {
+  background-position: 0 -2136px
+}
+
+.flags_small-GW {
+  background-position: 0 -2160px
+}
+
+.flags_small-GY {
+  background-position: 0 -2184px
+}
+
+.flags_small-HK {
+  background-position: 0 -2208px
+}
+
+.flags_small-HN {
+  background-position: 0 -2232px
+}
+
+.flags_small-HR {
+  background-position: 0 -2256px
+}
+
+.flags_small-HT {
+  background-position: 0 -2280px
+}
+
+.flags_small-HU {
+  background-position: 0 -2304px
+}
+
+.flags_small-IC {
+  background-position: 0 -2328px
+}
+
+.flags_small-ID {
+  background-position: 0 -2352px
+}
+
+.flags_small-IE {
+  background-position: 0 -2376px
+}
+
+.flags_small-IL {
+  background-position: 0 -2400px
+}
+
+.flags_small-IM {
+  background-position: 0 -2424px
+}
+
+.flags_small-IN {
+  background-position: 0 -2448px
+}
+
+.flags_small-IQ {
+  background-position: 0 -2472px
+}
+
+.flags_small-IR {
+  background-position: 0 -2496px
+}
+
+.flags_small-IS {
+  background-position: 0 -2520px
+}
+
+.flags_small-IT {
+  background-position: 0 -2544px
+}
+
+.flags_small-JE {
+  background-position: 0 -2568px
+}
+
+.flags_small-JM {
+  background-position: 0 -2592px
+}
+
+.flags_small-JO {
+  background-position: 0 -2616px
+}
+
+.flags_small-JP {
+  background-position: 0 -2640px
+}
+
+.flags_small-KE {
+  background-position: 0 -2664px
+}
+
+.flags_small-KG {
+  background-position: 0 -2688px
+}
+
+.flags_small-KH {
+  background-position: 0 -2712px
+}
+
+.flags_small-KI {
+  background-position: 0 -2736px
+}
+
+.flags_small-KM {
+  background-position: 0 -2760px
+}
+
+.flags_small-KN {
+  background-position: 0 -2784px
+}
+
+.flags_small-KP {
+  background-position: 0 -2808px
+}
+
+.flags_small-KR {
+  background-position: 0 -2832px
+}
+
+.flags_small-KW {
+  background-position: 0 -2856px
+}
+
+.flags_small-KY {
+  background-position: 0 -2880px
+}
+
+.flags_small-KZ {
+  background-position: 0 -2904px
+}
+
+.flags_small-LA {
+  background-position: 0 -2928px
+}
+
+.flags_small-LB {
+  background-position: 0 -2952px
+}
+
+.flags_small-LC {
+  background-position: 0 -2976px
+}
+
+.flags_small-LI {
+  background-position: 0 -3000px
+}
+
+.flags_small-LK {
+  background-position: 0 -3024px
+}
+
+.flags_small-LR {
+  background-position: 0 -3048px
+}
+
+.flags_small-LS {
+  background-position: 0 -3072px
+}
+
+.flags_small-LT {
+  background-position: 0 -3096px
+}
+
+.flags_small-LU {
+  background-position: 0 -3120px
+}
+
+.flags_small-LV {
+  background-position: 0 -3144px
+}
+
+.flags_small-LY {
+  background-position: 0 -3168px
+}
+
+.flags_small-MA {
+  background-position: 0 -3192px
+}
+
+.flags_small-MC {
+  background-position: 0 -3216px
+}
+
+.flags_small-MD {
+  background-position: 0 -3240px
+}
+
+.flags_small-ME {
+  background-position: 0 -3264px
+}
+
+.flags_small-MF {
+  background-position: 0 -3288px
+}
+
+.flags_small-MG {
+  background-position: 0 -3312px
+}
+
+.flags_small-MH {
+  background-position: 0 -3336px
+}
+
+.flags_small-MK {
+  background-position: 0 -3360px
+}
+
+.flags_small-ML {
+  background-position: 0 -3384px
+}
+
+.flags_small-MM {
+  background-position: 0 -3408px
+}
+
+.flags_small-MN {
+  background-position: 0 -3432px
+}
+
+.flags_small-MO {
+  background-position: 0 -3456px
+}
+
+.flags_small-MP {
+  background-position: 0 -3480px
+}
+
+.flags_small-MQ {
+  background-position: 0 -3504px
+}
+
+.flags_small-MR {
+  background-position: 0 -3528px
+}
+
+.flags_small-MS {
+  background-position: 0 -3552px
+}
+
+.flags_small-MT {
+  background-position: 0 -3576px
+}
+
+.flags_small-MU {
+  background-position: 0 -3600px
+}
+
+.flags_small-MV {
+  background-position: 0 -3624px
+}
+
+.flags_small-MW {
+  background-position: 0 -3648px
+}
+
+.flags_small-MX {
+  background-position: 0 -3672px
+}
+
+.flags_small-MY {
+  background-position: 0 -3696px
+}
+
+.flags_small-MZ {
+  background-position: 0 -3720px
+}
+
+.flags_small-NA {
+  background-position: 0 -3744px
+}
+
+.flags_small-NC {
+  background-position: 0 -3768px
+}
+
+.flags_small-NE {
+  background-position: 0 -3792px
+}
+
+.flags_small-NF {
+  background-position: 0 -3816px
+}
+
+.flags_small-NG {
+  background-position: 0 -3840px
+}
+
+.flags_small-NI {
+  background-position: 0 -3864px
+}
+
+.flags_small-NL {
+  background-position: 0 -3888px
+}
+
+.flags_small-NO {
+  background-position: 0 -3912px
+}
+
+.flags_small-NP {
+  background-position: 0 -3936px
+}
+
+.flags_small-NR {
+  background-position: 0 -3960px
+}
+
+.flags_small-NU {
+  background-position: 0 -3984px
+}
+
+.flags_small-NZ {
+  background-position: 0 -4008px
+}
+
+.flags_small-OM {
+  background-position: 0 -4032px
+}
+
+.flags_small-PA {
+  background-position: 0 -4056px
+}
+
+.flags_small-PE {
+  background-position: 0 -4080px
+}
+
+.flags_small-PF {
+  background-position: 0 -4104px
+}
+
+.flags_small-PG {
+  background-position: 0 -4128px
+}
+
+.flags_small-PH {
+  background-position: 0 -4152px
+}
+
+.flags_small-PK {
+  background-position: 0 -4176px
+}
+
+.flags_small-PL {
+  background-position: 0 -4200px
+}
+
+.flags_small-PN {
+  background-position: 0 -4224px
+}
+
+.flags_small-PR {
+  background-position: 0 -4248px
+}
+
+.flags_small-PS {
+  background-position: 0 -4272px
+}
+
+.flags_small-PT {
+  background-position: 0 -4296px
+}
+
+.flags_small-PW {
+  background-position: 0 -4320px
+}
+
+.flags_small-PY {
+  background-position: 0 -4344px
+}
+
+.flags_small-QA {
+  background-position: 0 -4368px
+}
+
+.flags_small-RO {
+  background-position: 0 -4392px
+}
+
+.flags_small-RS {
+  background-position: 0 -4416px
+}
+
+.flags_small-RU {
+  background-position: 0 -4440px
+}
+
+.flags_small-RW {
+  background-position: 0 -4464px
+}
+
+.flags_small-SA {
+  background-position: 0 -4488px
+}
+
+.flags_small-SB {
+  background-position: 0 -4512px
+}
+
+.flags_small-SC {
+  background-position: 0 -4536px
+}
+
+.flags_small-SD {
+  background-position: 0 -4560px
+}
+
+.flags_small-SE {
+  background-position: 0 -4584px
+}
+
+.flags_small-SG {
+  background-position: 0 -4608px
+}
+
+.flags_small-SH {
+  background-position: 0 -4632px
+}
+
+.flags_small-SI {
+  background-position: 0 -4656px
+}
+
+.flags_small-SK {
+  background-position: 0 -4680px
+}
+
+.flags_small-SL {
+  background-position: 0 -4704px
+}
+
+.flags_small-SM {
+  background-position: 0 -4728px
+}
+
+.flags_small-SN {
+  background-position: 0 -4752px
+}
+
+.flags_small-SO {
+  background-position: 0 -4776px
+}
+
+.flags_small-SR {
+  background-position: 0 -4800px
+}
+
+.flags_small-SS {
+  background-position: 0 -4824px
+}
+
+.flags_small-ST {
+  background-position: 0 -4848px
+}
+
+.flags_small-SV {
+  background-position: 0 -4872px
+}
+
+.flags_small-SY {
+  background-position: 0 -4896px
+}
+
+.flags_small-SZ {
+  background-position: 0 -4920px
+}
+
+.flags_small-TC {
+  background-position: 0 -4944px
+}
+
+.flags_small-TD {
+  background-position: 0 -4968px
+}
+
+.flags_small-TF {
+  background-position: 0 -4992px
+}
+
+.flags_small-TG {
+  background-position: 0 -5016px
+}
+
+.flags_small-TH {
+  background-position: 0 -5040px
+}
+
+.flags_small-TJ {
+  background-position: 0 -5064px
+}
+
+.flags_small-TK {
+  background-position: 0 -5088px
+}
+
+.flags_small-TL {
+  background-position: 0 -5112px
+}
+
+.flags_small-TM {
+  background-position: 0 -5136px
+}
+
+.flags_small-TN {
+  background-position: 0 -5160px
+}
+
+.flags_small-TO {
+  background-position: 0 -5184px
+}
+
+.flags_small-TR {
+  background-position: 0 -5208px
+}
+
+.flags_small-TT {
+  background-position: 0 -5232px
+}
+
+.flags_small-TV {
+  background-position: 0 -5256px
+}
+
+.flags_small-TW {
+  background-position: 0 -5280px
+}
+
+.flags_small-TZ {
+  background-position: 0 -5304px
+}
+
+.flags_small-UA {
+  background-position: 0 -5328px
+}
+
+.flags_small-UG {
+  background-position: 0 -5352px
+}
+
+.flags_small-US {
+  background-position: 0 -5376px
+}
+
+.flags_small-UY {
+  background-position: 0 -5400px
+}
+
+.flags_small-UZ {
+  background-position: 0 -5424px
+}
+
+.flags_small-VA {
+  background-position: 0 -5448px
+}
+
+.flags_small-VC {
+  background-position: 0 -5472px
+}
+
+.flags_small-VE {
+  background-position: 0 -5496px
+}
+
+.flags_small-VG {
+  background-position: 0 -5520px
+}
+
+.flags_small-VI {
+  background-position: 0 -5544px
+}
+
+.flags_small-VN {
+  background-position: 0 -5568px
+}
+
+.flags_small-VU {
+  background-position: 0 -5592px
+}
+
+.flags_small-WF {
+  background-position: 0 -5616px
+}
+
+.flags_small-WS {
+  background-position: 0 -5640px
+}
+
+.flags_small-YE {
+  background-position: 0 -5664px
+}
+
+.flags_small-YT {
+  background-position: 0 -5688px
+}
+
+.flags_small-ZA {
+  background-position: 0 -5712px
+}
+
+.flags_small-ZM {
+  background-position: 0 -5736px
+}
+
+.flags_small-ZW {
+  background-position: 0 -5760px
+}
+
+.flags_small-_abkhazia {
+  background-position: 0 -5784px
+}
+
+.flags_small-_basque-country {
+  background-position: 0 -5808px
+}
+
+.flags_small-_british-antarctic-territory {
+  background-position: 0 -5832px
+}
+
+.flags_small-_commonwealth {
+  background-position: 0 -5856px
+}
+
+.flags_small-GB-ENG {
+  background-position: 0 -5880px
+}
+
+.flags_small-_gosquared {
+  background-position: 0 -5904px
+}
+
+.flags_small-XK {
+  background-position: 0 -5928px
+}
+
+.flags_small-_mars {
+  background-position: 0 -5952px
+}
+
+.flags_small-_nagorno-karabakh {
+  background-position: 0 -5976px
+}
+
+.flags_small-_nato {
+  background-position: 0 -6000px
+}
+
+.flags_small-_northern-cyprus {
+  background-position: 0 -6024px
+}
+
+.flags_small-_olympics {
+  background-position: 0 -6048px
+}
+
+.flags_small-_red-cross {
+  background-position: 0 -6072px
+}
+
+.flags_small-GB-SCL {
+  background-position: 0 -6096px
+}
+
+.flags_small-_somaliland {
+  background-position: 0 -6120px
+}
+
+.flags_small-_south-ossetia {
+  background-position: 0 -6144px
+}
+
+.flags_small-_united-nations {
+  background-position: 0 -6168px
+}
+
+.flags_small-_unknown {
+  background-position: 0 -6192px
+}
+
+.flags_small-GB-WLS {
+  background-position: 0 -6216px
+}

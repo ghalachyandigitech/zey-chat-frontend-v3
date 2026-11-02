@@ -1,0 +1,273 @@
+.chats{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+    align-items: end;
+    width: 100%;
+}
+.chats > .item > .container > svg{
+    cursor: pointer;
+}
+.chats > .item > .container > svg:hover{
+    fill: red;
+}
+
+.chats > .item{
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: white;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    width: 160px;
+    height: 36px;
+    z-index: 1;
+    overflow: hidden;
+}
+.chats > .item-min{
+    height: 26px !important;
+}
+
+.chats > .item > .container > .unread{
+    height: 32px;
+    width: 32px;
+    text-align: center;
+    align-content: center;
+    border-radius: 50%;
+    background-color: brown;
+}
+.chats > .item > .container > .name{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    flex: 10;
+    text-align: right;
+}
+
+.chats > .item > .container{
+    z-index: 1;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 0 2px;
+}
+
+.item .background{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.item > .background-silver{
+    background: linear-gradient(90deg, rgb(180, 180, 178) 0%, rgb(27, 27, 27) 100%);
+}
+
+.item > .background-yellow{
+    background: none 0 0 repeat scroll rgb(255, 131, 8);
+}
+
+.item > .background-default{
+    background: rgb(15, 61, 86)
+}
+
+.chats-views{
+    align-content: end;
+}
+.chats-views > .container{
+    position: relative;
+    cursor: pointer;
+}
+.chats-views > .container .body > span{
+    display: flex;
+    align-items: center;
+    height: 35px;
+    background-color: #0f3d56;
+    color: white;
+    padding-left: 5px;
+}
+.chats-views .container span > svg{
+    margin-left: auto;
+}
+.chats-views .container > .body > div{
+    display: flex;
+    align-items: center;
+}
+.chats-views .container > .body > div > span{
+    width: 100%;
+    padding-left: 5px;
+}
+.chats-views .container > .body > div > span:hover{
+    background-color: rgba(128,128,128,.3);
+}
+.chats-views .container > .body{
+    overflow: hidden;
+    min-width: 200px;
+    max-width: 250px;
+    bottom: 45px;
+    position: absolute;
+    left: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+.chats-views .container > .body > div > svg:hover{
+    fill: red;
+}
+
+.chat-container{
+    background-color: rgb(238, 238, 238);
+    width: 90%;
+    height: 90%;
+    border: 1px solid;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+}
+.chat-container > .body{
+    display: flex;
+    border: 1px solid;
+    padding: 5px 10px;
+    flex: 1;
+    gap: 10px;
+    min-height: 0;
+}
+.chat-container .past-chats{
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+.chat-container .past-chats .table{
+    flex: 3 !important;
+}
+.chat-container .past-chats .view{
+    flex: 7;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.chat{
+    flex: 12 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid;
+    padding-bottom: 40px;
+}
+.chat > div{
+    border-radius: 5px;
+    background-color: white;
+}
+.chat .message img, .chat .message video{
+    cursor: pointer;
+    max-width: 150px;
+    max-height: 150px;
+}
+.chat > .messaging{
+    height: 110px;
+    border: 1px solid yellow;
+    display: flex;
+}
+
+.chat > .messages{
+    gap: 5px;
+    border: 1px solid red;
+    flex: 7;
+    padding: 5px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat .messages > .right{
+    max-width: 80%;
+    align-self: end;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row-reverse;
+}
+
+.chat .messages > .left{
+    max-width: 80%;
+    display: flex;
+}
+
+.chat .messages > .left > span{
+    border-left: 15px solid rgba(255, 255, 255, 0);
+    border-bottom: 15px solid;
+    color: #eeeeee;
+}
+
+.chat .messages > .right > span{
+    border-right: 15px solid rgba(255, 255, 255, 0);
+    border-bottom: 15px solid;
+    color: #dcdcdc;
+}
+
+.chat .messages .date{
+    display: flex;
+    font-size: 12px;
+    align-items: center;
+    gap: 2px;
+}
+
+
+.chat .messages .message{
+    display: flex;
+    flex-direction: column;
+    color: rgb(85, 85, 85);
+    padding: 5px;
+}
+
+.chat .messages > .right > .message{
+    background-color: #dcdcdc;
+    border-radius: 5px 5px 0 5px;
+    align-items: flex-end;
+}
+
+.chat .messages > .center > .message{
+    align-items: center;
+}
+
+.chat .messages > .left > .message{
+    background-color: #eeeeee;
+    border-radius: 5px 5px 5px 0;
+}
+
+
+.chat .messaging > textarea{
+    flex: 1;
+    resize: none;
+    padding: 5px;
+    border: none;
+}
+.chat .messaging-controller{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    border-left: 1px solid #dcdcdc;
+}
+.chat .messaging-controller svg{
+    width: 28px;
+}
+.chat .shortcuts{
+    height: 0;
+    border: 1px solid;
+    width: 100%;
+    position: relative;
+    top: -100px;
+}
+.chat .shortcuts > div{
+    background-color: darkgray;
+    min-height: 100px;
+}
+.chat .shortcuts .shortcut-hovered{
+    border: 1px solid;
+}
+.chat .messaging-textarea-error{
+    border: 1.5px solid red;
+}
+
