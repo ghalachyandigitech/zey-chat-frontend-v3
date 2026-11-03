@@ -1,7 +1,6 @@
-import {HISTORY_PAGE_ITEMS_COUNT} from '../../../Constants';
+const Pagination = ({page, setPage, totalCount, PageItemsCount}) => {
+    const pagesCount = Math.ceil(totalCount/PageItemsCount);
 
-const Pagination = ({page, setPage, totalCount}) => {
-    const pagesCount = Math.ceil(totalCount/HISTORY_PAGE_ITEMS_COUNT);
     const Page = ({number}) => (
         <button className={page === number ? 'active': ''} onClick={() => setPage(number)}>
             {number}

@@ -49,7 +49,7 @@ export function teamLeadsUpdate(data){
     const {error} = Joi.object({userPartnerId, name, limit})
         .validate(data, {abortEarly: false});
 
-    return error ? Response({error}) : Axios.put('team-leads/' + routeBase,
+    return error ? Response({error}) : Axios.put(routeBase + 'team-leads',
         data, {params: {userPartnerId: data.userPartnerId}}
     );
 }
@@ -58,7 +58,7 @@ export function adminsUpdate(data){
     const {error} = Joi.object({userPartnerId, name, limit, role, email})
         .validate(data, {abortEarly: false});
 
-    return error ? Response({error}) : Axios.put('admins/' + routeBase,
+    return error ? Response({error}) : Axios.put(routeBase + 'admins',
         data, {params: {userPartnerId: data.userPartnerId}}
     );
 }

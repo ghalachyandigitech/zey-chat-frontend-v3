@@ -1,6 +1,8 @@
 import {createSlice} from '@reduxjs/toolkit'
 import {getBrowser, getPlatform} from "../../helpers/stringHelper";
 
+const collections = ['incoming', 'assigned', 'served', 'active', 'idle'];
+
 function defaults(state){
     state.timer = 0;
     state.incoming = [];
@@ -17,7 +19,7 @@ export const visitorsSlice = createSlice({
     initialState: defaults({}),
     reducers: {
         setVisitors: (state, {payload}) => {
-            for(const type of ['incoming', 'assigned', 'served', 'active', 'idle']){
+            for(const type of collections){
                 payload[type].forEach(visitor => {
                     visitor.platform = getPlatform(visitor.userAgent);
                     visitor.browser = getBrowser(visitor.userAgent);
@@ -28,7 +30,7 @@ export const visitorsSlice = createSlice({
         },
 
         updateVisitor: (state, {payload}) => {
-            for(const type of ['incoming', 'assigned', 'served', 'active', 'idle']){
+            for(const type of collections){
                 const visitor = state[type].find(i => i._id === payload);
                 if(visitor){
                     state[type] = state[type].filter(i => i._id !== payload);
@@ -39,7 +41,7 @@ export const visitorsSlice = createSlice({
             }
         },
         deleteVisitor: (state, {payload}) => {
-            for(const type of ['incoming', 'assigned', 'served', 'active', 'idle']){
+            for(const type of collections){
                 state[type] = state[type].filter(i => i._id !== payload)
             }
         },

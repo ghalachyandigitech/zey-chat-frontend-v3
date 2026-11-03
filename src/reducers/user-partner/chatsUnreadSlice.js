@@ -32,9 +32,9 @@ export const chatsUnreadSlice = createSlice({
             if(chat) state.chats[payload] = {};
         },
         updateCompanionUnread: (state, {payload}) => {
-            const {_id, id, status} = payload;
+            const {_id, messageIds, status} = payload;
             const chat = state.chats[_id];
-            if(chat) payload.messageIds.forEach(id => chat[id] = status);
+            if(chat) messageIds.forEach(id => chat[id] = status);
         },
         deleteChatsUnread: (state) => {
             state.chats = {};

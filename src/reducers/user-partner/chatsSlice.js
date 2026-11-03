@@ -14,7 +14,7 @@ export const chatsSlice = createSlice({
                 if(ended) delete state.list['ended'+ended._id];
             }
 
-            delete state['waiting'+chat._id];
+            delete state.list['waiting'+chat._id];
 
             state.list[chat.collection+chat._id] = chat;
         },

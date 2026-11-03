@@ -11,11 +11,11 @@ import {setPopUp} from "../reducers/popUpSlice";
 
 import PopUp from "../components/PopUp";
 import WindowNotifications from "../components/user-partner/WindowNotifications";
-import KeyboardController from "../components/user-partner/KeyboardController";
+import KeyboardController from "../controllers/user-partner/KeyboardController";
 import ChatRequests from "../components/user-partner/ChatRequests";
 import TransferRequests from "../components/user-partner/TransferRequests";
 import ChatPopUp from "../components/user-partner/chatPopUp/ChatPopUp";
-import Socket from "../components/user-partner/Socket";
+import SocketController from "../controllers/user-partner/SocketController";
 import Chats from "../components/user-partner/Chats";
 import Status from "../components/user-partner/Status";
 import TeamMenu from "../components/user-partner/TeamMenu";
@@ -97,7 +97,7 @@ const UserPartner = () => {
 
     if (!load) return (
         <div className="user-partner">
-            <Socket config={{partnerId, userPartnerId, role}} buttonLogoutRef={buttonLogoutRef} />
+            <SocketController config={{partnerId, userPartnerId, role}} buttonLogoutRef={buttonLogoutRef} />
             <ChatPopUp />
             <WindowNotifications />
             <PopUp routes={config.popUpRoutes.reduce((a, n) => {a[n] = userPartnerPopUps[n]; return a}, {})} />

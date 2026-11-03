@@ -14,9 +14,9 @@ import {setVisitors, setVisitor, deleteVisitor, deleteVisitors, updateVisitor} f
 import {deleteVisitorBanned, setVisitorBanned} from "../../reducers/user-partner/visitorsBannedSlice";
 import {DATE_OPTIONS} from "../../Constants";
 
-const Socket = ({config, buttonLogoutRef}) => {
+const SocketController = ({config, buttonLogoutRef}) => {
     const dispatch = useDispatch();
-//todo socket connecti jamanak hash@ uxarkel auth jwt userPartnerLogin
+
     useEffect(() => {
         connectSocket(config);
 
@@ -59,16 +59,19 @@ const Socket = ({config, buttonLogoutRef}) => {
             dispatch(setChat({chat}));
             dispatch(openAwaitingChat(chat));
         }
+
         socket.on('transfer.cancel', _id => {
             dispatch(setChatStatus({_id, status: 2}));
         });
-        /*todo team-leads*/
+
         socket.on('transfer.new.set', data => {
             dispatch(setTransfer(data));
         });
+
         socket.on('transfer.new.delete', _id => {
             dispatch(deleteTransfer(_id));
         });
+
         socket.on('chats.view', (data) => {
             const [chatInfo] = data;
 
@@ -81,6 +84,7 @@ const Socket = ({config, buttonLogoutRef}) => {
 
             recover(data, 'views');
         });
+
         socket.on('visitors.update', ([visitor, role]) => {
             if(role === ''){
                 dispatch(updateVisitor(visitor));
@@ -89,8 +93,6 @@ const Socket = ({config, buttonLogoutRef}) => {
                 if(role !== 'disconnected-visitors') dispatch(setVisitor({visitor, role}));
             }
         });
-
-        /*todo team-leads*/
 
         socket.on('permission.ban.set', ([companionBanUpdatedAt, userPartnerId, banReason, companionBanUpdatedAt1, name]) => {
             companionBanUpdatedAt = companionBanUpdatedAt ? new Date(companionBanUpdatedAt).toLocaleDateString(...DATE_OPTIONS): '';
@@ -111,7 +113,6 @@ const Socket = ({config, buttonLogoutRef}) => {
         });
 
         socket.on('user.update', ([agent, agents, file]) => {
-            console.log(agent);
             /*todo team-leads*/
             agent.visitors && dispatch(setVisitors(agent.visitors));
             agent.transfers && dispatch(setTransfers(agent.transfers.reduce((a, t) => {a[t.chatId] = t; return a}, {})));
@@ -153,7 +154,6 @@ const Socket = ({config, buttonLogoutRef}) => {
         });
 
         socket.on('message.typing', ([userPartnerId, typing, chatId]) => {
-            console.log('5555')
             if(socket.auth.userId !== userPartnerId){
                 dispatch(setCompanionTyping({_id: chatId, typing: typing}))
             }
@@ -215,7 +215,6 @@ const Socket = ({config, buttonLogoutRef}) => {
         });
 
         socket.on('disconnect', () => {
-            console.log('disconnect')
             dispatch(chatPopupClose());
             dispatch(deleteAgents());
             dispatch(deleteRequests());
@@ -230,4 +229,4 @@ const Socket = ({config, buttonLogoutRef}) => {
     }, []);
 };
 
-export default Socket;
+export default SocketController;

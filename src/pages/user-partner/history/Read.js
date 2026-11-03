@@ -6,8 +6,8 @@ import HistoryChat from "./HistoryChat";
 import {getVisitor} from "../../../controllers/user-partner/UserPartner";
 import {getTranscript} from "../../../controllers/user-partner/ChatsController";
 import {LoadingGif} from "../../../Icons";
-
-import Pagination from "./Pagination";
+import {HISTORY_PAGE_ITEMS_COUNT} from '../../../Constants';
+import Pagination from "../../../components/Pagination";
 import Select from "../../../components/Select";
 import Input from "../../../components/Input";
 import InputDate from "../../../components/Datepicker";
@@ -79,7 +79,7 @@ const Read = () => {
                     setRange('today'); setDate(dateRange.today());
                 }}>reset</button>
             </div>
-            <Pagination page={page} setPage={page => setPage(page)} totalCount={totalCount} />
+            <Pagination page={page} setPage={page => setPage(page)} totalCount={totalCount} PageItemsCount={HISTORY_PAGE_ITEMS_COUNT} />
             <div className="history-body">
                 <div className="table">
                     <table>

@@ -22,21 +22,21 @@ const hotKeys = {
         else this.dispatch(setFlashPopUp(`chat number ${index} not found`));
     },
     'true[': function(){
-        let previousIndex = this._ids.findIndex(_id => _id === this.chatsListId) - 1;
+        let previousIndex = this._ids.findIndex(_id => _id === this.chatPopUpChatIndex) - 1;
         if(previousIndex < 0) previousIndex = this._ids.length - 1;
 
         const chat = this._chats[previousIndex];
         if(chat) this.dispatch(chatPopupOpen(chat));
     },
     'true]': function(){
-        let nextIndex = this._ids.findIndex(_id => _id === this.chatsListId) + 1;
+        let nextIndex = this._ids.findIndex(_id => _id === this.chatPopUpChatIndex) + 1;
         if(nextIndex >= this._ids.length) nextIndex = 0;
 
         const chat = this._chats[nextIndex];
         if(chat) this.dispatch(chatPopupOpen(chat));
     },
     'false.': function(){
-        const chat = this._list[this.chatsListId];
+        const chat = this._list[this.chatPopUpChatIndex];
         if(chat) this.dispatch(setPopUp(['chats/end', chat]));
     },
     'false,': function(){this.dispatch(chatPopupClose());},
@@ -67,7 +67,7 @@ const KeyboardController = ({chatRequestsRef}) => {
     }, []);
 
     hotKeys.list = list;
-    hotKeys.chatsListId = collection+_id;
+    hotKeys.chatPopUpChatIndex = collection+_id;
 };
 
 export default KeyboardController;

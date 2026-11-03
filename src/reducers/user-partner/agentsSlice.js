@@ -36,8 +36,6 @@ export const agentsSlice = createSlice({
             const {status, userPartnerId} = payload;
 
             const agent = state.list[userPartnerId];
-            console.log(agent)
-            console.log(status)
             if(agent) agent.status = status;
         }
     },
