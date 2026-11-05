@@ -44,23 +44,6 @@
     position: absolute;
 }
 
-.count{
-    font-size: 11px;
-    position: absolute;
-    top: -0.25rem;
-    width: 1.25rem;
-    height: 1.25rem;
-    background-color: #f43f5e;
-    border-radius: 50%;
-    border: 2px solid white;
-    place-content: center;
-    color: white;
-}
-
-.count:empty{
-    display: none;
-}
-
 .stars > svg{
     width: 45px;
     stroke: #ffd600;
@@ -89,7 +72,7 @@
     border-radius: 1rem;
 }
 
-.pop-up{
+.window .pop-up{
     width: 100%;
     position: absolute;
     height: 100%;
@@ -100,7 +83,7 @@
     background-color: rgba(220,220,220,.03);
 }
 
-.pop-up > div{
+.window .pop-up > div{
     width: 80%;
     border-radius: 1rem;
     padding: 1rem;

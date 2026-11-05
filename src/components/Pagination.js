@@ -1,17 +1,23 @@
+import {PrevSvg, NextSvg} from "../Icons";
+
 const Pagination = ({page, setPage, totalCount, PageItemsCount}) => {
     const pagesCount = Math.ceil(totalCount/PageItemsCount);
+    const buttons = {
+        'prev': <PrevSvg />,
+        'next': <NextSvg />,
+    };
 
-    const Page = ({number}) => (
+    const Page = ({number, type}) => (
         <button className={page === number ? 'active': ''} onClick={() => setPage(number)}>
-            {number}
+            {!type ? number : buttons[type]}
         </button>
     );
 
     return(
         <div className="pagination">
             <div>result {totalCount}</div>
-            <div>
-                {pagesCount > 1 && page !== 1 && <Page className="prev" number={page-1}/>}
+            <div className="pages">
+                {pagesCount > 1 && page !== 1 && <Page type="prev" number={page-1}/>}
                 {page <= pagesCount && pagesCount >= 1 && <Page number={1}/>}
                 {pagesCount > 5 && page > 3 && ' ... '}
                 {
@@ -21,7 +27,7 @@ const Pagination = ({page, setPage, totalCount, PageItemsCount}) => {
                 }
                 {page < pagesCount-2 && ' ... '}
                 {pagesCount > 1 && <Page number={pagesCount}/>}
-                {page < pagesCount && pagesCount > 0 && <Page className="next" number={page+1}/>}
+                {page < pagesCount && pagesCount > 0 && <Page type="next" number={page+1}/>}
             </div>
         </div>
     )

@@ -15,6 +15,7 @@ import InputDate from "../../../components/Datepicker";
 const Read = () => {
     const [load, setLoad] = useState(false);
     const [date, setDate] = useState(dateRange.today());
+    const [reset, setReset] = useState(0);
     const [range, setRange] = useState('today');
     const [page, setPage] = useState(1);
     const [visitorId, setVisitorId] = useState('');
@@ -42,14 +43,14 @@ const Read = () => {
         setTotalCount(payload.count);
     };
 
-    useEffect(() => {get()}, [page]);
+    useEffect(() => {get()}, [page, reset]);
     
     console.log('History component');
 
     return(
         <>
             <div className="input-group">
-                <Select value={range} setValue={(v) => {setDate(dateRange[v]); setRange(v);}} className="input-mini" options={[
+                <Select value={range} onChange={(v) => {setDate(dateRange[v]); setRange(v);}} className="input-mini" options={[
                      ['today', 'today'],
                      ['yesterday', 'yesterday'],
                      ['current-week', 'current week'],
@@ -58,7 +59,7 @@ const Read = () => {
                  ]} />
                 <InputDate value={date[0]} onChange={(value) => setDate([value, date[1]])}/>
                 <InputDate value={date[1]} onChange={(value) => setDate([value, date[0]])}/>
-                <Select name="status" value={status} setValue={v => setStatus(v*1)} className="input-mini" options={[
+                <Select name="status" value={status} onChange={v => setStatus(v*1)} className="input-mini" options={[
                     ['0', 'all'],
                     ['5', 'served'],
                     ['6', 'missed']
@@ -68,15 +69,21 @@ const Read = () => {
                 <Input name="visitor id" value={visitorId} setValue={setVisitorId} className="input-mini"/>
                 <Input name="agent" value={agentName} setValue={setAgentName} className="input-mini"/>
                 <Input name="message" value={message} setValue={setMessage} className="input-mini"/>
-                <Select name="rating" value={rating} setValue={v => setRating(v*1)} className="input-mini" options={[
+                <Select name="rating" value={rating} onChange={v => setRating(v*1)} className="input-mini" options={[
                     ['0', 'all'], ['1', '1'],['2', '2'],
                     ['3', '3'], ['4', '4'], ['5', '5']
                 ]} />
                 <button className="button" onClick={get}>search</button>
                 <button className="button" onClick={() => {
-                    setPage(1); setVisitorId(''); setMessage('');
-                    setAgentName(''); setRating(0); setStatus(0);
-                    setRange('today'); setDate(dateRange.today());
+                    setVisitorId('');
+                    setMessage('');
+                    setAgentName('');
+                    setRating(0);
+                    setStatus(0);
+                    setRange('today');
+                    setDate(dateRange.today());
+                    setPage(1);
+                    setReset(reset+1);
                 }}>reset</button>
             </div>
             <Pagination page={page} setPage={page => setPage(page)} totalCount={totalCount} PageItemsCount={HISTORY_PAGE_ITEMS_COUNT} />
@@ -104,7 +111,7 @@ const Read = () => {
                                 }}>
                                     <td>{chat.visitorName}</td>
                                     <td>{chat.agentsNames.join(', ')}</td>
-                                    <td>{chat.createdAt}</td>
+                                    <td>{new Date(chat.createdAt).toLocaleString(['sv'])}</td>
                                     <td>{chat.rating}</td>
                                 </tr>
                             )}

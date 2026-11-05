@@ -7,6 +7,22 @@ export const DeleteSvg = ({onButtonClick}) => {
     )
 };
 
+export const PrevSvg = () => {
+    return(
+        <svg width="20" viewBox="6 -2 24 24">
+            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path>
+        </svg>
+    )
+};
+
+export const NextSvg = () => {
+    return(
+        <svg width="20" viewBox="6 -2 24 24">
+            <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path>
+        </svg>
+    )
+};
+
 export const SettingsSvg = () => {
     return (
         <svg viewBox="0 0 512 512">

@@ -23,12 +23,13 @@ export const dateRange = {
         const today = new Date();
 
         const dateStart = new Date(today);
-        dateStart.setDate(today.getDate() - today.getDay());
+        dateStart.setDate(today.getDate() - today.getDay() + 1);
 
         const dateEnd = new Date(dateStart);
         dateEnd.setDate(dateStart.getDate() + 6);
 
         dateStart.setHours(0,0,0,0);
+        dateEnd.setHours(23,59,59,0);
 
         return [dateStart, dateEnd];
     },

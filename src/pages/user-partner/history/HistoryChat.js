@@ -6,8 +6,6 @@ import ChatLogs from "./ChatLogs";
 const HistoryChat = ({chat}) => {
     const [page, setPage] = useState(0);
 
-    console.log('HistoryChat component');
-
     return(
         <>
             <div className="tabs">
