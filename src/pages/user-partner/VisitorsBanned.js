@@ -14,7 +14,6 @@ const VisitorsBanned = () => {
 
     useEffect(() => {
         (async () => {//todo amen angam visitori infon request a anum karoxa petq a cache pahel
-            console.log('VisitorsBanned useEffect');
             setLoad(true);
 
             const [error, {visitors}] = await getVisitorsBanned();//todo error@ brnel datark userPartner null

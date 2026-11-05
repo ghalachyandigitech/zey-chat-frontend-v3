@@ -7,8 +7,6 @@ const PopUp = ({routes}) => {
     const dispatch = useDispatch();
     const {name, type} = useSelector(state => state.popUp);
 
-    console.log('popUp component');
-console.log(routes[name]);
     if(name) return (
         <div className="pop-up" style={{zIndex: 2}} onClick={e => {if(e.target.classList.contains('pop-up')) dispatch(setPopUp(0))}}>
             <div className="container">

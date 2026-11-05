@@ -42,6 +42,17 @@ const styles = {
     zIndex: Joi.number().min(0).max(999999).required(),
     zIndexMobile: Joi.number().min(0).max(999999).required(),
     notificationColor: Joi.string().pattern(_HEX_PATTERN).required(),
+    textareaPlaceholderColor: Joi.string().pattern(_HEX_PATTERN).required(),
+    textareaBorderColor: Joi.string().pattern(_HEX_PATTERN).required(),
+    typingTextColor: Joi.string().pattern(_HEX_PATTERN).required(),
+    sendButtonBackgroundColor: Joi.string().pattern(_HEX_PATTERN).required(),
+    sendButtonIconColor: Joi.string().pattern(_HEX_PATTERN).required(),
+    sendButtonHoverColor: Joi.string().pattern(_HEX_PATTERN).required(),
+    fileButtonBackgroundColor: Joi.string().pattern(_HEX_PATTERN).required(),
+    fileButtonIconColor: Joi.string().pattern(_HEX_PATTERN).required(),
+    fileButtonHoverColor: Joi.string().pattern(_HEX_PATTERN).required(),
+    typingAnimationColor: Joi.string().pattern(_HEX_PATTERN).required(),
+    waitingAgentAnimationColor: Joi.string().pattern(_HEX_PATTERN).required(),
 };
 
 export function get(){

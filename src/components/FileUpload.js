@@ -1,7 +1,6 @@
 import {useRef, useState} from "react";
 import File from './File';
 import {CloseSvg, FileUploadProfileSvg} from "../Icons";
-import {IMAGE_EXT} from "../Constants";
 
 const FileUpload = ({name, value, onClose, onUpload, error}) => {
     const [upload, setUpload] = useState(['', '']);
