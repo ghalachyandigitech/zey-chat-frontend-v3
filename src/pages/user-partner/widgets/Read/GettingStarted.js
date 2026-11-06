@@ -1,8 +1,8 @@
 import {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import Input from "../../../components/Input";
-import {setFlashPopUp} from "../../../reducers/flashPopUpSlice";
-import {subscribe} from "../../../controllers/user-partner/WidgetsController";
+import Input from "../../../../components/Input";
+import {setFlashPopUp} from "../../../../reducers/flashPopUpSlice";
+import {subscribe} from "../../../../controllers/user-partner/WidgetsController";
 
 const GettingStarted = () => {
     const dispatch = useDispatch();

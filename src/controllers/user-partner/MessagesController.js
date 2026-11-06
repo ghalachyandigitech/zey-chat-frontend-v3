@@ -1,5 +1,10 @@
 import {socket} from '../../Socket'
 import {FILE_PATTERN} from '../../Constants'
+import {Axios} from "../../Axios";
+
+export function deleteMessageFileById(messageId){
+    return Axios.delete('chats/file', {params: {messageId}});
+}
 
 export function set(_id, message){
     if(!message.message && !message.file[0]) return [{message: ''}];

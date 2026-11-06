@@ -38,11 +38,11 @@ import UserHome from "./pages/user/Home";
 import UserLogin from "./pages/user/Login";
 //user-partners
 import VisitorsBanned from "./pages/user-partner/VisitorsBanned";
-import Visitors from "./pages/user-partner/visitors/Read";
+import Visitors from "./pages/user-partner/visitors/Read/Index";
 import Agents from "./pages/user-partner/agents/Read";
-import Widgets from "./pages/user-partner/widgets/Read";
-import Profile from "./pages/user-partner/profile/Read";
-import Histories from "./pages/user-partner/history/Read";
+import Widgets from "./pages/user-partner/widgets/Read/Index";
+import Profile from "./pages/user-partner/profile/Read/Read";
+import Histories from "./pages/user-partner/history/Read/Index";
 import Shortcuts from "./pages/user-partner/shortcuts/Read";
 
 function App() {

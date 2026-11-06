@@ -1,16 +1,16 @@
 import {useState, useEffect} from "react";
-import {setPopUp} from "../../../reducers/popUpSlice";
+import {setPopUp} from "../../../../reducers/popUpSlice";
 import {useDispatch, useSelector} from "react-redux";
-import {get} from "../../../controllers/user-partner/WidgetsController";
+import {get} from "../../../../controllers/user-partner/WidgetsController";
 import GettingStarted from "./GettingStarted";
-import Appearance from "./Update/Appearance";
-import Forms from "./Update/Forms";
-import Settings from "./Update/Settings";
-import {setWidgets, setSelected} from "../../../reducers/user-partner/widgetsSlice";
-import Tabs from "../../../components/Tabs";
-import Select from "../../../components/Select";
+import Appearance from "../Update/Appearance";
+import Forms from "../Update/Forms";
+import Settings from "../Update/Settings";
+import {setWidgets, setSelected} from "../../../../reducers/user-partner/widgetsSlice";
+import Tabs from "../../../../components/Tabs";
+import Select from "../../../../components/Select";
 
-const Read = () => {
+const Index = () => {
     const {list, selected} = useSelector(state => state.widgets);
     const dispatch = useDispatch();
     const [page, setPage] = useState(0);
@@ -57,4 +57,4 @@ const Read = () => {
     )
 };
 
-export default Read;
+export default Index;

@@ -4,11 +4,10 @@ import MessageStatus from "./MessageStatus";
 import {page} from "../../../controllers/user-partner/MessagesController";
 import {setPageLoad} from "../../../reducers/user-partner/chatsMessagesSlice";
 import {useSelector, useDispatch} from "react-redux";
-import {useEffect, useRef, useState} from "react";
-import BanMessage from "./BanMessage";
-import {REG_EXP_URL_DETECT} from "../../../Constants";
+import {useEffect, useRef} from "react";
+import {REG_EXP_URL_DETECT, REG_EXP_PERSIAN_FONT} from "../../../Constants";
 
-const Messages = ({_id, collection, messagesStatus}) => {
+const Messages = ({_id, collection, messagesStatus, companionBanUpdatedAt}) => {
     const dispatch = useDispatch();
     const messagesRef = useRef(null);
     const messagesEndRef = useRef(null);
@@ -42,7 +41,9 @@ const Messages = ({_id, collection, messagesStatus}) => {
                     <span> </span>
                     <div className={`message`}>
                         {file[0] && <div className="file"><File value={file} /></div>}
-                        {text.map(t => REG_EXP_URL_DETECT.test(t) ? <a style={{display: 'contents'}} target="_blank" href={t}>{t}</a> : t)}
+                        <span className={text[0] && REG_EXP_PERSIAN_FONT.test(text[0][0]) && 'rtl'}>
+                            {text.map(t => REG_EXP_URL_DETECT.test(t) ? <a style={{display: 'contents'}} target="_blank" href={t}>{t}</a> : t)}
+                        </span>
                         <span className="date">
                             {date}
                             {messagesStatus && side === 'right' && <>
@@ -52,7 +53,12 @@ const Messages = ({_id, collection, messagesStatus}) => {
                     </div>
                </div>
             )}
-            <BanMessage _id={_id} collection={collection} />
+            {companionBanUpdatedAt && <div className="center">
+                <div className="message">
+                    visitor is banned
+                    <span className="date">{companionBanUpdatedAt}</span>
+                </div>
+            </div>}
             {companionTyping && <div className="left">
                 <span> </span>
                 <div className="message"><TypingSvg /></div>

@@ -7,11 +7,11 @@ import {setRequests, setRequest, deleteRequest, deleteRequests, setTransfer, set
 import {setChatMessages, setUnread, deleteChatMessages, endChatMessages, setChatMessage, setLogUser, updateMessageByHash, setMessagesPage, deleteChatsMessages, setCompanionTyping} from "../../reducers/user-partner/chatsMessagesSlice";
 import {setFlashPopUp} from "../../reducers/flashPopUpSlice";
 import {setView, deleteChatView, updateChatView, deleteChatsViewSaved} from "../../reducers/user-partner/chatsViewSavedSlice";
-import {deleteAgent, deleteAgents, updateStatus} from "../../reducers/user-partner/agentsSlice";
+import {deleteAgent, deleteAgents, setAgent, updateStatus} from "../../reducers/user-partner/agentsSlice";
 import {setCompanionUnread, setChatUnread, updateCompanionUnread, deleteCompanionUnread, deleteChatsUnread} from "../../reducers/user-partner/chatsUnreadSlice";
 import {setChat, setCompanionStatus, updateUserPartnerId, setCompanionCreated, endChat, setFile, deleteChat, deleteChats, setCompanionBanUpdatedAt, setChatStatus} from "../../reducers/user-partner/chatsSlice";
 import {setVisitors, setVisitor, deleteVisitor, deleteVisitors, updateVisitor} from "../../reducers/user-partner/visitorsSlice";
-import {deleteVisitorBanned, setVisitorBanned} from "../../reducers/user-partner/visitorsBannedSlice";
+import {deleteVisitorBanned, setVisitorBanned, setVisitorsBanned} from "../../reducers/user-partner/visitorsBannedSlice";
 import {DATE_OPTIONS} from "../../Constants";
 
 const SocketController = ({config, buttonLogoutRef}) => {
@@ -101,10 +101,7 @@ const SocketController = ({config, buttonLogoutRef}) => {
 
             dispatch(deleteVisitorBanned({_id: userPartnerId}));
             if(companionBanUpdatedAt){
-                dispatch(setFlashPopUp('visitor baned'));
                 dispatch(setVisitorBanned({_id: userPartnerId, updatedAt: companionBanUpdatedAt, banReason, name: 'test'}));
-            }else{
-                dispatch(setFlashPopUp('visitor unbaned'));
             }
         });
 
@@ -112,7 +109,7 @@ const SocketController = ({config, buttonLogoutRef}) => {
             recover(data);
         });
 
-        socket.on('user.update', ([agent, agents, file]) => {
+        socket.on('user.update', ([agent, agents, file, bannedVisitors]) => {
             /*todo team-leads*/
             agent.visitors && dispatch(setVisitors(agent.visitors));
             agent.transfers && dispatch(setTransfers(agent.transfers.reduce((a, t) => {a[t.chatId] = t; return a}, {})));
@@ -123,6 +120,8 @@ const SocketController = ({config, buttonLogoutRef}) => {
                 companionName: view.companion.name
             })));
             /*todo team-leads*/
+            dispatch(setVisitorsBanned(bannedVisitors));
+            agents.forEach(agent => dispatch(setAgent(agent)));
             dispatch(setStatus(agent.status));
             agent.requests && dispatch(setRequests(agent.requests.reduce((acc, _id) => {acc[_id] = 1; return acc}, {})));
         });

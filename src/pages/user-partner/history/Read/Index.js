@@ -1,18 +1,21 @@
-import {getPage} from "../../../controllers/user-partner/HistoriesController";
+import {useDispatch} from "react-redux";
+import {getPage} from "../../../../controllers/user-partner/HistoriesController";
 import {useState, useEffect} from "react";
-import {dateRange} from "../../../helpers/dateHelper";
 
+import {dateRange} from "../../../../helpers/dateHelper";
 import HistoryChat from "./HistoryChat";
-import {getVisitor} from "../../../controllers/user-partner/UserPartner";
-import {getTranscript} from "../../../controllers/user-partner/ChatsController";
-import {LoadingGif} from "../../../Icons";
-import {HISTORY_PAGE_ITEMS_COUNT} from '../../../Constants';
-import Pagination from "../../../components/Pagination";
-import Select from "../../../components/Select";
-import Input from "../../../components/Input";
-import InputDate from "../../../components/Datepicker";
+import {getVisitor} from "../../../../controllers/user-partner/UserPartner";
+import {getTranscript} from "../../../../controllers/user-partner/ChatsController";
+import {LoadingGif} from "../../../../Icons";
+import {HISTORY_PAGE_ITEMS_COUNT} from '../../../../Constants';
+import Pagination from "../../../../components/Pagination";
+import Select from "../../../../components/Select";
+import Input from "../../../../components/Input";
+import InputDate from "../../../../components/Datepicker";
+import {setTranscript} from "../../../../reducers/user-partner/transcriptSlice";
 
-const Read = () => {
+const Index = () => {
+    const dispatch = useDispatch();
     const [load, setLoad] = useState(false);
     const [date, setDate] = useState(dateRange.today());
     const [reset, setReset] = useState(0);
@@ -44,8 +47,6 @@ const Read = () => {
     };
 
     useEffect(() => {get()}, [page, reset]);
-    
-    console.log('History component');
 
     return(
         <>
@@ -107,6 +108,7 @@ const Read = () => {
                                     if(Object.keys(visitorError).length || Object.keys(transcriptError).length) return; //todo error@ brnel datark userPartner null
 
                                     // mi hat error grel mi tex arji
+                                    dispatch(setTranscript(transcript));
                                     setHistoryChat({visitor, transcript})
                                 }}>
                                     <td>{chat.visitorName}</td>
@@ -127,4 +129,4 @@ const Read = () => {
     )
 };
 
-export default Read;
+export default Index;

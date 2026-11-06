@@ -25,7 +25,7 @@ export const chatsViewSavedSlice = createSlice({
             const userPartner = state.userPartners[userPartnerId];
             if(userPartner){
                 delete userPartner.chats[chatId];
-                if(!userPartner.chats.length) delete state.userPartners[userPartnerId]
+                if(!Object.keys(userPartner.chats).length) delete state.userPartners[userPartnerId]
             }
         },
         updateChatView: (state, {payload}) => {

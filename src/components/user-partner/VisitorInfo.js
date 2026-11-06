@@ -7,7 +7,7 @@ import {LoadingGif} from "../../Icons";
 
 let noteTimeoutId = null;
 
-const VisitorInfo = ({userPartner, chatsPastLength, buttons, chatCreated}) => {
+const VisitorInfo = ({userPartner, chatsPastLength, banButton, buttons, chatCreated}) => {
     const dispatch = useDispatch();
 
     const [note, setNote] = useState(userPartner ? userPartner.note : '');
@@ -32,7 +32,7 @@ const VisitorInfo = ({userPartner, chatsPastLength, buttons, chatCreated}) => {
                         <div>on site</div>
                     </div>
                 </div>
-                <div className="buttons">{buttons}</div>
+                <div className="buttons">{banButton}{buttons}</div>
                 <div className="referrers">
                     {userPartner.references && userPartner.references.map(reference => <div>{reference}</div>)}
                 </div>

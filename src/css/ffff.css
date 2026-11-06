@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('../fonts/woff2/IRANSansX-Medium.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; /* Tells the browser to show fallback text until the font loads */
+}
+
 .dropdown {
     width: 64px;
     height: 34px;
@@ -277,6 +285,10 @@
     color: grey;
     font-size: 17px;
     font-weight: 100;
+}
+
+.rtl{
+    direction: rtl;
 }
 
 .widget-appearance .row > span {

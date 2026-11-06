@@ -40,10 +40,6 @@ export function updateNote(note, userPartnerId){
     return Axios.put('user-partners/note', {note}, {params: {userPartnerId: userPartnerId}});
 }
 
-export function getVisitorsBanned(){
-    return Axios.get('user-partners/visitors/banned');
-}
-
 export async function getVisitor(userPartnerId){
     const [error, payload] = await Axios.get('user-partners/visitors', {params: {userPartnerId: userPartnerId}});
 

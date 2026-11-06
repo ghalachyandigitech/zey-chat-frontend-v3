@@ -68,6 +68,11 @@
     background: none 0 0 repeat scroll rgb(255, 131, 8);
 }
 
+.item > .background-black{
+    background: black
+}
+
+
 .item > .background-default{
     background: rgb(15, 61, 86)
 }
@@ -219,6 +224,7 @@
     flex-direction: column;
     color: rgb(85, 85, 85);
     padding: 5px;
+    white-space: pre;
 }
 
 .chat .messages > .right > .message{
@@ -235,7 +241,6 @@
     background-color: #eeeeee;
     border-radius: 5px 5px 5px 0;
 }
-
 
 .chat .messaging > textarea{
     flex: 1;

@@ -7,17 +7,23 @@ import {getVisitor} from "../../../controllers/user-partner/UserPartner";
 import VisitorInfoButtons from "./VisitorInfoButtons";
 import ChatCreated from "./ChatCreated";
 import Tabs from "../../Tabs";
+import BanButton from "../BanButton";
+import {useSelector} from "react-redux";
 
 const VisitorChat = ({_id, messaging, collection, companionId}) => {
     const [visitor, setVisitor] = useState({});
     const [page, setPage] = useState(0);
+    const visitorBanned = useSelector(state => state.visitorsBanned.list.find(({_id}) => _id === companionId));
+    const companionBanUpdatedAt = visitorBanned && visitorBanned.updatedAt;
 
     useEffect(() => {
-        (async () => {//todo amen angam visitori infon request a anum karoxa petq a cache pahel
+        (async () => {
             setVisitor({});
 
             const [error, payload] = await getVisitor(companionId);//todo error@ brnel datark userPartner null
+
             if(Object.keys(error).length) return;
+
             setVisitor(payload);
         })()
     }, []);
@@ -32,11 +38,12 @@ const VisitorChat = ({_id, messaging, collection, companionId}) => {
                 {[
                     <>
                         <div className="chat">
-                            <Messages _id={_id} collection={collection} messagesStatus={true} />
-                            {messaging && <Messaging _id={_id} collection={collection} />}
+                            <Messages companionBanUpdatedAt={companionBanUpdatedAt} _id={_id} collection={collection} messagesStatus={true} />
+                            {messaging && !companionBanUpdatedAt && <Messaging _id={_id} collection={collection} />}
                         </div>
                         <VisitorInfo userPartner={visitor.userPartner} chatsPastLength={visitor.chatsPast?.length}
                              chatCreated={<ChatCreated _id={_id} collection={collection}/>}
+                             banButton={<BanButton companionId={companionId}/>}
                              buttons={<VisitorInfoButtons _id={_id} collection={collection} />}/>
                     </>,
                     <div className="past-chats">

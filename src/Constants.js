@@ -123,7 +123,8 @@ export const USER_PARTNERS_CONFIGS = {
             'shortcuts/create',
             'shortcuts/update',
             'shortcuts/delete',
-            'team-leads/agents/update'
+            'team-leads/agents/update',
+            'histories/delete/file'
         ],
         leftMenu: {
             menu: [
@@ -175,7 +176,8 @@ export const USER_PARTNERS_CONFIGS = {
             'admins/agents/update',
             'agents/delete',
             'widgets/create',
-            'widgets/delete'
+            'widgets/delete',
+            'histories/delete/file'
         ],
         leftMenu: {
             menu: [

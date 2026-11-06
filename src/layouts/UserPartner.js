@@ -38,6 +38,7 @@ import ShortcutsDelete from "../pages/user-partner/shortcuts/Delete";
 import ProfileUpdateInfo from "../pages/user-partner/profile/Update/Info";
 import WidgetsCreate from "../pages/user-partner/widgets/Create";
 import WidgetsDelete from "../pages/user-partner/widgets/Delete";
+import HistoryDeleteFile from "../pages/user-partner/history/Delete/File";
 
 import {logOut} from "../controllers/user-partner/UserPartner";
 
@@ -67,6 +68,7 @@ const UserPartner = () => {
         'ban': <Ban />,
         'hot-keys': <HotKeys />,
         'chats/end': <ChatEnd />,
+        'histories/delete/file': <HistoryDeleteFile />,
         'transfer': <Transfer />,
         'agents/create': <AgentsCreate />,
         'team-leads/agents/update': <TeamLeadsAgentsUpdate />,
@@ -87,7 +89,6 @@ const UserPartner = () => {
 
             dispatch(setUserPartner(payload));
             dispatch(setProfile(payload));
-            payload.agents.forEach(agent => dispatch(setAgent(agent)));
 
             setLoad(false);
         })();

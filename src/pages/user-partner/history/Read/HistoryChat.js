@@ -1,7 +1,8 @@
 import {useState} from "react";
-import VisitorInfo from "../../../components/user-partner/VisitorInfo";
-import Transcript from "../../../components/user-partner/Transcript";
+import VisitorInfo from "../../../../components/user-partner/VisitorInfo";
+import Transcript from "../../../../components/user-partner/Transcript";
 import ChatLogs from "./ChatLogs";
+import BanButton from "../../../../components/user-partner/BanButton";
 
 const HistoryChat = ({chat}) => {
     const [page, setPage] = useState(0);
@@ -21,9 +22,10 @@ const HistoryChat = ({chat}) => {
             </div>
             <div className="history-chat-body">
                 {[
-                    <Transcript transcript={chat.transcript} companionId={chat.visitor.userPartner._id}/>,
+                    <Transcript companionId={chat.visitor.userPartner._id}/>,
                     <div className="visitor-info">
-                        <VisitorInfo userPartner={chat.visitor.userPartner} chatsPastLength={chat.visitor.chatsPast.length}/>
+                        <VisitorInfo banButton={<BanButton companionId={chat.visitor.userPartner._id}/>}
+                            userPartner={chat.visitor.userPartner} chatsPastLength={chat.visitor.chatsPast.length}/>
                     </div>,
                     <ChatLogs logUsers={chat.transcript.logUsers} logs={chat.transcript.logs} />
                 ][page]}

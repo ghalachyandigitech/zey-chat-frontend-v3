@@ -7,7 +7,7 @@ const File = ({value, error=false}) => {
     return (
         (value[0] === 'loading' && <LoadingGif />)
         || (IMAGE_EXT.includes(value[0]) && <img onClick={fileClick} src={value[1] }/>)
-        || (VIDEO_EXT.includes(value[0]) && <video onClick={fileClick} controls="controls" src={value[1]} />)
+        || (VIDEO_EXT.includes(value[0]) && <video controls="controls" src={value[1]} />)
         || (error && value[0] && <FileErrorSvg />)
     )
 };

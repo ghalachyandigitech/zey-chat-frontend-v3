@@ -13,7 +13,7 @@ function messagesRangeToArray(messages){
     return messagesArray;
 }
 
-function createMessage({id, hashId, userId, message, file, date}, companionId, authUserPartnerId, logUsers){
+export function createMessage({id, hashId, userId, message, file, date}, companionId, authUserPartnerId, logUsers){
     if(!userId){
         const [userPartnerId, action] = message.split('_');
         message = userPartnerId === authUserPartnerId ? `you ${action}` : `${logUsers[userPartnerId]} ${action}`;

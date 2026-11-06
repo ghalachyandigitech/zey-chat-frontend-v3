@@ -18,7 +18,7 @@ const Messaging = ({_id, collection}) => {
     const [shortcutsTag, setShortcutsTag] = useState('');
     const [shortcutHovered, setShortcutHovered] = useState(-1);
     const [uploadFile, setUploadFile] = useState(['', '']);
-    const {file, draft, companionBanExpire} = useSelector(state => state.chats.list[collection+_id]);
+    const {file, draft} = useSelector(state => state.chats.list[collection+_id]);
     const {userPartnerId: authUserPartnerId, shortcuts} = useSelector(state => state.userPartner);
 
     useEffect(() => {
@@ -75,7 +75,7 @@ const Messaging = ({_id, collection}) => {
         typingOff();
     }
 
-    if(!companionBanExpire) return(
+    return(
         <>
             <div className="messaging">
                 <textarea defaultValue={draft} ref={messageTextarea} style={{direction: textareaDirection}}

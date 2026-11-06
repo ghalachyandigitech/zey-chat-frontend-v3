@@ -2,11 +2,13 @@ import {useState} from "react";
 import {DATE_OPTIONS} from "../../../Constants";
 import {LoadingGif} from "../../../Icons";
 import {getTranscript} from "../../../controllers/user-partner/ChatsController";
+import {setTranscript} from "../../../reducers/user-partner/transcriptSlice";
 import Transcript from "../Transcript";
+import {useDispatch} from "react-redux";
 
 const PastChats = ({chatsPast, companionId}) => {
+    const dispatch = useDispatch();
     const [load, setLoad] = useState(false);
-    const [transcript, setTranscript] = useState(null);
 
     return(
         <>
@@ -25,7 +27,7 @@ const PastChats = ({chatsPast, companionId}) => {
 
                                 if(Object.keys(error).length) return;
 
-                                setTranscript(payload);
+                                dispatch(setTranscript(payload));
                             }}>
                                 <td>{chat.agentName}</td>
                                 <td>{new Date(chat.createdAt).toLocaleDateString(...DATE_OPTIONS)}</td>
@@ -36,7 +38,7 @@ const PastChats = ({chatsPast, companionId}) => {
                     {!chatsPast.length && <div>result not found</div>}
                 </div>
                 <div className="view">
-                    {(load && <LoadingGif />) || (transcript && <Transcript transcript={transcript} companionId={companionId} />)}
+                    {(load && <LoadingGif />) || <Transcript companionId={companionId} />}
                 </div>
             </>}
         </>

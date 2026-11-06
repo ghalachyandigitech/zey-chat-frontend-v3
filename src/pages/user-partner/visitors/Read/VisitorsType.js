@@ -1,9 +1,9 @@
-import {ArrowSvg} from "../../../Icons";
+import {ArrowSvg} from "../../../../Icons";
 import {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {view} from "../../../controllers/user-partner/ChatsController";
-import {awaitChat} from "../../../reducers/user-partner/chatPopupSlice";
-import {setView} from "../../../reducers/user-partner/chatsViewSavedSlice";
+import {view} from "../../../../controllers/user-partner/ChatsController";
+import {awaitChat} from "../../../../reducers/user-partner/chatPopupSlice";
+import {setView} from "../../../../reducers/user-partner/chatsViewSavedSlice";
 
 //todo backendum visitori mej created key ka bayc vonc vor chi ogtagorcvum
 const VisitorsType = ({type, name, online, viewChat, filter}) => {

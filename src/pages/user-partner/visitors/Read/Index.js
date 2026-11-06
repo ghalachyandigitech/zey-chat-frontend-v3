@@ -1,11 +1,11 @@
-import {visitorsTypes} from "../../../Constants";
+import {visitorsTypes} from "../../../../Constants";
 import {useDispatch} from "react-redux";
 import VisitorsType from "./VisitorsType";
-import {updateVisitorsTimer} from "../../../reducers/user-partner/visitorsSlice";
+import {updateVisitorsTimer} from "../../../../reducers/user-partner/visitorsSlice";
 import {useState, useEffect} from "react";
-import InputSearch from "../../../components/InputSearch";
+import InputSearch from "../../../../components/InputSearch";
 
-const Read = () => {
+const Index = () => {
     const dispatch = useDispatch();
     const [filter, setFilter] = useState('');
 
@@ -30,4 +30,4 @@ const Read = () => {
     )
 };
 
-export default Read;
+export default Index;

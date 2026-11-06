@@ -22,6 +22,7 @@ import partnersReducer from "./reducers/user-super/partnersSlice";
 import userAdminsReducer from "./reducers/user-super/userAdminsSlice";
 import profileSlice from "./reducers/user-partner/profileSlice";
 import windowNotificationsSlice from "./reducers/user-partner/windowNotificationsSlice";
+import transcriptReducer from "./reducers/user-partner/transcriptSlice";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const store = configureStore({
@@ -45,6 +46,7 @@ const store = configureStore({
         visitorsBanned: visitorsBannedReducer,
         partners: partnersReducer,
         userAdmins: userAdminsReducer,
+        transcript: transcriptReducer,
     }
 });
 

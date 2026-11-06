@@ -1,10 +1,10 @@
 import {useDispatch, useSelector} from "react-redux";
-import {setPopUp} from "../../../reducers/popUpSlice";
-import {NameSvg, EmailSvg, HashSvg} from "../../../Icons";
-import ProfileImageUpdate from "./Update/ProfileImage";
-import DashboardImageUpdate from "./Update/DashboardImage";
+import {setPopUp} from "../../../../reducers/popUpSlice";
+import {NameSvg, EmailSvg, HashSvg} from "../../../../Icons";
+import ProfileImageUpdate from "../Update/ProfileImage";
+import DashboardImageUpdate from "../Update/DashboardImage";
 
-const Info = ({profileUpdate, profileDashboardImage}) => {
+const Index = ({profileUpdate, profileDashboardImage}) => {
     const dispatch = useDispatch();
     const {name, userEmail} = useSelector(state => state.profile);
 
@@ -23,4 +23,4 @@ const Info = ({profileUpdate, profileDashboardImage}) => {
     )
 };
 
-export default Info;
+export default Index;

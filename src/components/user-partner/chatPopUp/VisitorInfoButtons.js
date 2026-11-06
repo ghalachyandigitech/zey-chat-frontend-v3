@@ -2,15 +2,12 @@ import {useDispatch, useSelector} from "react-redux";
 import {setFile, setTransfer} from "../../../controllers/user-partner/ChatsController";
 import {setFlashPopUp} from "../../../reducers/flashPopUpSlice";
 import {setChatStatus} from "../../../reducers/user-partner/chatsSlice";
-import {setBan} from "../../../controllers/user-partner/UserPartner";
 import {setPopUp} from "../../../reducers/popUpSlice";
 
 const VisitorInfoButtons = ({_id, collection}) => {
     const dispatch = useDispatch();
-    const {status, companionId, file, companionBanUpdatedAt} = useSelector(state => state.chats.list[collection+_id]);
-    const {banButton, transferRequests, attachFileButton} = useSelector(state => state.userPartner.config);
-
-    const banButtonAction = !banButton ? '' : companionBanUpdatedAt ? 'unban' : 'ban';
+    const {status, file} = useSelector(state => state.chats.list[collection+_id]);
+    const {transferRequests, attachFileButton} = useSelector(state => state.userPartner.config);
 
     let fileAction = '';
     let transferButtonAction = '';
@@ -31,13 +28,6 @@ const VisitorInfoButtons = ({_id, collection}) => {
                 }
             }}>transfer chat</button>}
             {fileAction && <button onClick={() => setFile(_id)}>attache {fileAction}</button>}
-            {banButtonAction && <button onClick={() => {
-                if(banButtonAction === 'ban'){
-                    dispatch(setPopUp(['ban', {userPartnerId: companionId}]))
-                }else if(banButtonAction === 'unban'){
-                    setBan(companionId, 0);
-                }
-            }}>{banButtonAction}</button>}
         </>
     )
 };

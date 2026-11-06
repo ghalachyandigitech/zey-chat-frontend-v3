@@ -1,0 +1,81 @@
+.message1-center{
+    color: grey;
+    font-style: italic;
+    font-size: 13px;
+    text-align: center;
+}
+
+.message1-center .date{
+    color: grey;
+    font-style: italic;
+    font-size: 12px;
+}
+
+.message1-right{
+    justify-content: end;
+}
+
+.message1{
+    display: flex;
+    font-weight: 600;
+    white-space: pre;
+}
+
+.message1 .date{
+    color: #2f4f4f;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.transcript-pdf{
+    z-index: -1;
+    background: red;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 70%;
+    overflow: auto;
+}
+
+.transcript-messages{
+    padding: 10px;
+}
+
+/*// export const styles =  StyleSheet.create({*/
+/*//     message: {*/
+/*//         paddingBottom: '3px',*/
+/*//         wordBreak: 'break-all'*/
+/*//     },*/
+/*//     text: {*/
+/*//         log: {color: 'grey',  fontStyle: 'italic', fontSize: '13px'},*/
+/*//         agents: {},*/
+/*//         visitors: {fontWeight: '600', whiteSpace: 'pre'}*/
+/*//     },*/
+/*//     direction: {*/
+/*//         rtl: {direction: 'rtl'},*/
+/*//         ltr: {}*/
+/*//     },*/
+/*//     date: {*/
+/*//         log: {},*/
+/*//         agents: {color: '#2f4f4f', fontWeight: '600', fontSize: '12px'},*/
+/*//         visitors: {color: '#2f4f4f', fontWeight: '600', fontSize: '12px'},*/
+/*//     },*/
+/*//     side:{*/
+/*//         log: {display: 'block', textAlign: 'center'},*/
+/*//         agents: {display: 'block', textAlign: 'right'},*/
+/*//         visitors: {display: 'block', textAlign: 'left'},*/
+/*//     },*/
+/*//     info: {*/
+/*//         display: 'inline-block',*/
+/*//         marginBottom: '10px',*/
+/*//         color: '#3c4858'*/
+/*//     },*/
+/*//     documentPdf: {*/
+/*//         overflowY: 'auto'*/
+/*//     },*/
+/*//     page: {*/
+/*//         padding: '10px',*/
+/*//         display: 'block'*/
+/*//     }*/
+/*// });*/

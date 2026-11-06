@@ -6,6 +6,7 @@ import {chatPopupClose} from "../../../reducers/user-partner/chatPopupSlice";
 const Header = ({_id, collection}) => {
     const dispatch = useDispatch();
     const chat = useSelector(state => state.chats.list[collection+_id]);
+
     const {name, styles: {headerLeftColor, headerDegree, headerRightColor}} = chat.widget;
 
     return (
