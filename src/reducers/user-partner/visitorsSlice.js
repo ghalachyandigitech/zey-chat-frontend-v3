@@ -1,15 +1,15 @@
 import {createSlice} from '@reduxjs/toolkit'
 import {getBrowser, getPlatform} from "../../helpers/stringHelper";
 
-const collections = ['incoming', 'assigned', 'served', 'active', 'idle'];
-
 function defaults(state){
     state.timer = 0;
-    state.incoming = [];
-    state.assigned = [];
-    state.served = [];
-    state.active = [];
-    state.idle = [];
+    state.roles = {
+        incoming : [10, []],
+        assigned: [10, []],
+        served: [10, []],
+        active: [10, []],
+        idle: [10, []]
+    };
 
     return state;
 }
@@ -19,30 +19,18 @@ export const visitorsSlice = createSlice({
     initialState: defaults({}),
     reducers: {
         setVisitors: (state, {payload}) => {
-            for(const type of collections){
-                payload[type].forEach(visitor => {
+            for(const role of Object.keys(state.roles)){
+                payload[role].forEach(visitor => {
                     visitor.platform = getPlatform(visitor.userAgent);
                     visitor.browser = getBrowser(visitor.userAgent);
                 });
 
-                state[type] = payload[type]
-            }
-        },
-
-        updateVisitor: (state, {payload}) => {
-            for(const type of collections){
-                const visitor = state[type].find(i => i._id === payload);
-                if(visitor){
-                    state[type] = state[type].filter(i => i._id !== payload);
-                    state[type] = visitor;
-
-                    break;
-                }
+                state.roles[role][1] = payload[role];
             }
         },
         deleteVisitor: (state, {payload}) => {
-            for(const type of collections){
-                state[type] = state[type].filter(i => i._id !== payload)
+            for(const role of Object.keys(state.roles)){
+                state.roles[role][1] = state.roles[role][1].filter(i => i._id !== payload)
             }
         },
         setVisitor: (state, {payload}) => {
@@ -50,10 +38,14 @@ export const visitorsSlice = createSlice({
             visitor.platform = getPlatform(visitor.userAgent);
             visitor.browser = getBrowser(visitor.userAgent);
 
-            state[role].push(visitor)
+            state.roles[role][1].push(visitor)
         },
+
         updateVisitorsTimer: (state) => {
             state.timer++;
+        },
+        setRoleCount: (state, {payload}) => {
+            state.roles[payload][0] += 10;
         },
         deleteVisitors: (state) => {
             defaults(state);
@@ -61,5 +53,5 @@ export const visitorsSlice = createSlice({
     },
 });
 
-export const {setVisitors, deleteVisitor, setVisitor, updateVisitorsTimer, deleteVisitors, updateVisitor} = visitorsSlice.actions;
+export const {setVisitors, deleteVisitor, setRoleCount, setVisitor, updateVisitorsTimer, deleteVisitors, updateVisitor} = visitorsSlice.actions;
 export default visitorsSlice.reducer;

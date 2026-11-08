@@ -1,6 +1,6 @@
 import {visitorsTypes} from "../../../../Constants";
 import {useDispatch} from "react-redux";
-import VisitorsType from "./VisitorsType";
+import VisitorsRole from "./VisitorsRole";
 import {updateVisitorsTimer} from "../../../../reducers/user-partner/visitorsSlice";
 import {useState, useEffect} from "react";
 import InputSearch from "../../../../components/InputSearch";
@@ -21,9 +21,9 @@ const Index = () => {
                 <InputSearch name="filter" value={filter} setValue={setFilter} />
             </div>
             <div className="visitors-view">
-                {visitorsTypes.map(([type, name]) => (
-                    <VisitorsType type={type} name={name} viewChat={type === 'served'} filter={filter}
-                        online={['incoming', 'assigned', 'served'].includes(type)} />
+                {visitorsTypes.map(([role, name]) => (
+                    <VisitorsRole role={role} name={name} viewChat={role === 'served'} filter={filter}
+                                  online={['incoming', 'assigned', 'served'].includes(role)} />
                 ))}
             </div>
         </>

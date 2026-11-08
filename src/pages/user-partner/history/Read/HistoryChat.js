@@ -24,7 +24,7 @@ const HistoryChat = ({chat}) => {
                 {[
                     <Transcript companionId={chat.visitor.userPartner._id}/>,
                     <div className="visitor-info">
-                        <VisitorInfo banButton={<BanButton companionId={chat.visitor.userPartner._id}/>}
+                        <VisitorInfo buttons={<BanButton companionId={chat.visitor.userPartner._id}/>}
                             userPartner={chat.visitor.userPartner} chatsPastLength={chat.visitor.chatsPast.length}/>
                     </div>,
                     <ChatLogs logUsers={chat.transcript.logUsers} logs={chat.transcript.logs} />

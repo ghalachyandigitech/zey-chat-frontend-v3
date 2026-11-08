@@ -3,20 +3,20 @@ import {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {view} from "../../../../controllers/user-partner/ChatsController";
 import {awaitChat} from "../../../../reducers/user-partner/chatPopupSlice";
+import {setRoleCount} from "../../../../reducers/user-partner/visitorsSlice";
 import {setView} from "../../../../reducers/user-partner/chatsViewSavedSlice";
 
-//todo backendum visitori mej created key ka bayc vonc vor chi ogtagorcvum
-const VisitorsType = ({type, name, online, viewChat, filter}) => {
+const VisitorsRole = ({role, name, online, viewChat, filter}) => {
     const dispatch = useDispatch();
     const [table, setTable] = useState(false);
 
-    const agentColumn = ['served', 'assigned'].includes(type);
+    const agentColumn = ['served', 'assigned'].includes(role);
     const agents = useSelector(state => state.agents.list);
-    let visitors = useSelector(state => state.visitors[type]);
+    let [count, visitors] = useSelector(state => state.visitors.roles[role]);
     if(filter) visitors = visitors.filter(visitor => visitor.name.indexOf(filter) !== -1);
 
     return(
-        <div className="visitors-view-type">
+        <div className="visitors-view-role">
             <div className="header" onClick={() => setTable(!table)}>
                 <span className="name">{name}</span>
                 <span className="count">{visitors.length}</span>
@@ -33,7 +33,7 @@ const VisitorsType = ({type, name, online, viewChat, filter}) => {
                         {online && <th>online</th>}
                     </tr></thead>
                     <tbody>
-                        {visitors.map(visitor =>
+                        {visitors.slice(0, count).map(visitor =>
                             <tr onClick={() => {
                                 if(viewChat){
                                     dispatch(awaitChat({_id: visitor.chatId}));
@@ -60,10 +60,12 @@ const VisitorsType = ({type, name, online, viewChat, filter}) => {
                         )}
                     </tbody>
                 </table>
-                {!visitors.length && <div>result not found</div>}
+                {(!visitors.length && <div>result not found</div>) || (count < visitors.length && <div className="input-group" style={{justifyContent: 'center'}}>
+                    <button className="button" onClick={() => dispatch(setRoleCount(role))}>load more</button>
+                </div>)}
             </div>}
         </div>
     )
 };
 
-export default VisitorsType;
+export default VisitorsRole;

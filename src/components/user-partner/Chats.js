@@ -11,7 +11,7 @@ const Chats = () => {
 
     return (
         <div className="chats">
-            {Object.values(chats).map(({collection, _id, status, companionId, companionName, userPartnerId}) =>
+            {Object.values(chats).map(({collection, _id, companionId, companionName, userPartnerId}) =>
                 <div className={`item ${collection === 'ended' ? 'item-min' : ''}`} key={_id}
                      onClick={() => dispatch(chatPopupOpen({_id, collection, companionId}))}>
                     <ChatBackground collection={collection} _id={_id}/>

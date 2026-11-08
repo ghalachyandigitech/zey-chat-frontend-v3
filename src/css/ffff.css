@@ -355,7 +355,7 @@
     fill: #0f3d56;
 }
 
-.visitors-view-type {
+.visitors-view-role {
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 10px;
@@ -363,19 +363,19 @@
     box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
 }
 
-.visitors-view-type .user-agent {
+.visitors-view-role .user-agent {
     display: flex;
     justify-content: center;
     gap: 5px;
 }
 
-.visitors-view-type > .header {
+.visitors-view-role > .header {
     justify-content: flex-end;
     display: flex;
     align-items: center;
 }
 
-.visitors-view-type .count {
+.visitors-view-role .count {
     width: 32px;
     height: 32px;
     align-content: center;
@@ -384,7 +384,7 @@
     background-color: brown;
 }
 
-.visitors-view-type .name {
+.visitors-view-role .name {
     margin-right: auto;
 }
 

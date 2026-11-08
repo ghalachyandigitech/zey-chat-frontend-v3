@@ -14,7 +14,8 @@ const VisitorChat = ({_id, messaging, collection, companionId}) => {
     const [visitor, setVisitor] = useState({});
     const [page, setPage] = useState(0);
     const visitorBanned = useSelector(state => state.visitorsBanned.list.find(({_id}) => _id === companionId));
-    const companionBanUpdatedAt = visitorBanned && visitorBanned.updatedAt;
+    const banUpdatedAt = visitorBanned && visitorBanned.updatedAt;
+    const chatsPastLength = visitor.chatsPast ? visitor.chatsPast.length : '';
 
     useEffect(() => {
         (async () => {
@@ -32,19 +33,21 @@ const VisitorChat = ({_id, messaging, collection, companionId}) => {
         <>
             <Tabs page={page} setPage={setPage} tabs={[
                 [0, 'current chat'],
-                [1, `past chats (${visitor.chatsPast ? visitor.chatsPast.length : ''})`]
+                [1, `past chats (${chatsPastLength})`]
             ]} />
             <div className="body">
                 {[
                     <>
                         <div className="chat">
-                            <Messages companionBanUpdatedAt={companionBanUpdatedAt} _id={_id} collection={collection} messagesStatus={true} />
-                            {messaging && !companionBanUpdatedAt && <Messaging _id={_id} collection={collection} />}
+                            <Messages banUpdatedAt={banUpdatedAt} _id={_id} collection={collection} messagesStatus={true} />
+                            {messaging && !banUpdatedAt && <Messaging _id={_id} collection={collection} />}
                         </div>
-                        <VisitorInfo userPartner={visitor.userPartner} chatsPastLength={visitor.chatsPast?.length}
+                        <VisitorInfo userPartner={visitor.userPartner} chatsPastLength={chatsPastLength}
                              chatCreated={<ChatCreated _id={_id} collection={collection}/>}
-                             banButton={<BanButton companionId={companionId}/>}
-                             buttons={<VisitorInfoButtons _id={_id} collection={collection} />}/>
+                             buttons={[
+                                 <BanButton companionId={companionId}/>,
+                                 <VisitorInfoButtons _id={_id} collection={collection} />
+                             ]}/>
                     </>,
                     <div className="past-chats">
                         <PastChats companionId={companionId} chatsPast={visitor.chatsPast} />

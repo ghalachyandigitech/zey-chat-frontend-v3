@@ -9,7 +9,7 @@ export const DATE_OPTIONS = ['sv', {second: '2-digit', hour: '2-digit', minute: 
 export const IMAGE_EXT = ['jpg', 'jpeg', 'png', 'image/jpeg', 'image/png', 'image/jpg'];
 export const VIDEO_EXT = ['mp4', 'video/mp4'];
 export const PLATFORMS = ['windows', 'android', 'iphone', 'mac']; //todo image-ner@ kara stex pahvi
-export const BROWSERS = ['edg', 'opr', 'firefox', 'fxios', 'safari', 'chrome']; //todo image-ner@ kara stex pahvi
+export const BROWSERS = ['edg', 'opr', 'firefox', 'fxios', 'chrome', 'safari']; //todo image-ner@ kara stex pahvi
 export const REG_EXP_URL_DETECT = /(https?:\/\/[^\s]+|www\.[^\s]+(?:\.[^\s]+)+)/g;
 
 export const visitorsTypes = [

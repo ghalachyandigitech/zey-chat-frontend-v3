@@ -44,8 +44,9 @@ export async function getVisitor(userPartnerId){
     const [error, payload] = await Axios.get('user-partners/visitors', {params: {userPartnerId: userPartnerId}});
 
     if(!Object.keys(error).length){
-        payload.platform = getPlatform(payload.userAgent);
-        payload.browser = getBrowser(payload.userAgent);
+        const {userPartner} = payload;
+        userPartner.platform = getPlatform(userPartner.userAgent);
+        userPartner.browser = getBrowser(userPartner.userAgent);
 
         return [{}, payload];
     }

@@ -6,7 +6,6 @@ const BanButton = ({companionId}) => {
     const dispatch = useDispatch();
     const visitor = useSelector(state => state.visitorsBanned.list.find(({_id}) => _id === companionId));
     const {banButton} = useSelector(state => state.userPartner.config);
-console.log(visitor);
     const banButtonAction = !banButton ? '' : visitor ? 'unban' : 'ban';
 
     return(

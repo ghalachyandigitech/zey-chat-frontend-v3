@@ -5,14 +5,12 @@ import {openAwaitingChat, closeIfOpened, endChatPopUp, chatPopupClose} from "../
 import {setNotification} from "../../reducers/user-partner/windowNotificationsSlice";
 import {setRequests, setRequest, deleteRequest, deleteRequests, setTransfer, setTransfers, deleteTransfer, deleteTransfers, setStatus} from "../../reducers/user-partner/profileSlice";
 import {setChatMessages, setUnread, deleteChatMessages, endChatMessages, setChatMessage, setLogUser, updateMessageByHash, setMessagesPage, deleteChatsMessages, setCompanionTyping} from "../../reducers/user-partner/chatsMessagesSlice";
-import {setFlashPopUp} from "../../reducers/flashPopUpSlice";
 import {setView, deleteChatView, updateChatView, deleteChatsViewSaved} from "../../reducers/user-partner/chatsViewSavedSlice";
 import {deleteAgent, deleteAgents, setAgent, updateStatus} from "../../reducers/user-partner/agentsSlice";
 import {setCompanionUnread, setChatUnread, updateCompanionUnread, deleteCompanionUnread, deleteChatsUnread} from "../../reducers/user-partner/chatsUnreadSlice";
-import {setChat, setCompanionStatus, updateUserPartnerId, setCompanionCreated, endChat, setFile, deleteChat, deleteChats, setCompanionBanUpdatedAt, setChatStatus} from "../../reducers/user-partner/chatsSlice";
+import {setChat, setCompanionStatus, updateUserPartnerId, setCompanionCreated, endChat, setFile, deleteChat, deleteChats, setChatStatus} from "../../reducers/user-partner/chatsSlice";
 import {setVisitors, setVisitor, deleteVisitor, deleteVisitors, updateVisitor} from "../../reducers/user-partner/visitorsSlice";
 import {deleteVisitorBanned, setVisitorBanned, setVisitorsBanned} from "../../reducers/user-partner/visitorsBannedSlice";
-import {DATE_OPTIONS} from "../../Constants";
 
 const SocketController = ({config, buttonLogoutRef}) => {
     const dispatch = useDispatch();
@@ -40,7 +38,6 @@ const SocketController = ({config, buttonLogoutRef}) => {
                 companionId: chatInfo.companion._id,
                 companionName: chatInfo.companion.name,
                 companionCreated: companionCreated, //todo backendi vra 0 poxel datark toxov ''
-                companionBanUpdatedAt: chatInfo.companion.banExpire ? new Date(chatInfo.companion.banExpire).toLocaleDateString(...DATE_OPTIONS) : '',
                 companionStatus: companionStatus, //todo voch mi tex chi ogtagorcvum es pahin,
                 userPartnerId: chatInfo.user._id,
                 userPartnerName: chatInfo.user.name,
@@ -86,22 +83,14 @@ const SocketController = ({config, buttonLogoutRef}) => {
         });
 
         socket.on('visitors.update', ([visitor, role]) => {
-            if(role === ''){
-                dispatch(updateVisitor(visitor));
-            }else{
-                dispatch(deleteVisitor(visitor._id));
-                if(role !== 'disconnected-visitors') dispatch(setVisitor({visitor, role}));
-            }
+            dispatch(deleteVisitor(visitor._id));
+            if(role !== 'disconnected-visitors') dispatch(setVisitor({visitor, role}));
         });
 
-        socket.on('permission.ban.set', ([companionBanUpdatedAt, userPartnerId, banReason, companionBanUpdatedAt1, name]) => {
-            companionBanUpdatedAt = companionBanUpdatedAt ? new Date(companionBanUpdatedAt).toLocaleDateString(...DATE_OPTIONS): '';
-
-            dispatch(setCompanionBanUpdatedAt({userPartnerId, companionBanUpdatedAt}));
-
+        socket.on('permission.ban.set', ([banUpdatedAt, userPartnerId, banReason, name]) => {
             dispatch(deleteVisitorBanned({_id: userPartnerId}));
-            if(companionBanUpdatedAt){
-                dispatch(setVisitorBanned({_id: userPartnerId, updatedAt: companionBanUpdatedAt, banReason, name: 'test'}));
+            if(banUpdatedAt){
+                dispatch(setVisitorBanned({_id: userPartnerId, banUpdatedAt, banReason, name}));
             }
         });
 
@@ -168,7 +157,7 @@ const SocketController = ({config, buttonLogoutRef}) => {
                 dispatch(setCompanionTyping({_id, typing: false}));
                 dispatch(setChatMessage({_id, message}));
                 dispatch(setUnread([_id]));
-                // if(document.hidden) dispatch(setNotification('message'));
+                if(document.hidden) dispatch(setNotification('message'));
             }
         });
 
@@ -206,7 +195,7 @@ const SocketController = ({config, buttonLogoutRef}) => {
 
         socket.on('chats.manual.set', _id => {
             dispatch(setRequest(_id));
-            // if(document.hidden) dispatch(setNotification('request'));
+            if(document.hidden) dispatch(setNotification('request'));
         });
 
         socket.on('chats.manual.delete', _id => { //todo route i anun@ request

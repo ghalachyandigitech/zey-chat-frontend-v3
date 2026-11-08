@@ -1,4 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit'
+import {DATE_OPTIONS} from "../../Constants";
 
 export const visitorsBannedSlice = createSlice({
     name: 'visitors-banned',
@@ -10,6 +11,7 @@ export const visitorsBannedSlice = createSlice({
             state.list = payload;
         },
         setVisitorBanned: (state, {payload}) => {
+            payload.banUpdatedAt = new Date(payload.banUpdatedAt).toLocaleDateString(...DATE_OPTIONS);
             state.list.push(payload);
         },
         deleteVisitorBanned: (state, {payload}) => {

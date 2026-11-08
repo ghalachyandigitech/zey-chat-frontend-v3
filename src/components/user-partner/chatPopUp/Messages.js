@@ -7,7 +7,7 @@ import {useSelector, useDispatch} from "react-redux";
 import {useEffect, useRef} from "react";
 import {REG_EXP_URL_DETECT, REG_EXP_PERSIAN_FONT} from "../../../Constants";
 
-const Messages = ({_id, collection, messagesStatus, companionBanUpdatedAt}) => {
+const Messages = ({_id, collection, messagesStatus, banUpdatedAt}) => {
     const dispatch = useDispatch();
     const messagesRef = useRef(null);
     const messagesEndRef = useRef(null);
@@ -53,10 +53,10 @@ const Messages = ({_id, collection, messagesStatus, companionBanUpdatedAt}) => {
                     </div>
                </div>
             )}
-            {companionBanUpdatedAt && <div className="center">
+            {banUpdatedAt && <div className="center">
                 <div className="message">
                     visitor is banned
-                    <span className="date">{companionBanUpdatedAt}</span>
+                    <span className="date">{banUpdatedAt}</span>
                 </div>
             </div>}
             {companionTyping && <div className="left">

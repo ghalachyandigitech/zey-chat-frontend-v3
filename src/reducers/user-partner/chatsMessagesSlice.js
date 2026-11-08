@@ -4,8 +4,6 @@ import {DATE_OPTIONS, REG_EXP_URL_DETECT} from "../../Constants";
 function messagesRangeToArray(messages){
     const messagesArray = [];
     for(let i = 0; i < messages.length; i += 5) {
-        if(messages.slice(i, i + 5).length !== 5) break;
-
         const [id, userId, message, file, date] = messages.slice(i, i + 5);
         messagesArray.push({id, userId, message, file, date});
     }

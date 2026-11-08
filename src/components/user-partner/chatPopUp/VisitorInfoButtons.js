@@ -4,15 +4,15 @@ import {setFlashPopUp} from "../../../reducers/flashPopUpSlice";
 import {setChatStatus} from "../../../reducers/user-partner/chatsSlice";
 import {setPopUp} from "../../../reducers/popUpSlice";
 
-const VisitorInfoButtons = ({_id, collection}) => {
+const TransferButton = ({_id, collection}) => {
     const dispatch = useDispatch();
     const {status, file} = useSelector(state => state.chats.list[collection+_id]);
     const {transferRequests, attachFileButton} = useSelector(state => state.userPartner.config);
 
-    let fileAction = '';
+    let fileButtonAction = '';
     let transferButtonAction = '';
     if(status !== 5){
-        fileAction = !file || !attachFileButton ? '' : file === 2 ? 'disable': 'enable';
+        fileButtonAction = !file || !attachFileButton ? '' : file === 2 ? 'disable': 'enable';
         transferButtonAction = transferRequests ? 'transfer-rapid' : status === 2 ? 'transfer' : status === 3 ? 'transfer-sent' : '';
     }
 
@@ -27,9 +27,9 @@ const VisitorInfoButtons = ({_id, collection}) => {
                     dispatch(setPopUp(['transfer', {_id}]));
                 }
             }}>transfer chat</button>}
-            {fileAction && <button onClick={() => setFile(_id)}>attache {fileAction}</button>}
+            {fileButtonAction && <button onClick={() => setFile(_id)}>attache {fileButtonAction}</button>}
         </>
     )
 };
 
-export default VisitorInfoButtons;
+export default TransferButton;

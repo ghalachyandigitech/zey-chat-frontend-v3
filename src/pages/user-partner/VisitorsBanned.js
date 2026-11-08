@@ -7,7 +7,7 @@ import InputSearch from "../../components/InputSearch";
 const VisitorsBanned = () => {
     const [filter, setFilter] = useState('');
     const visitors = useSelector(state => state.visitorsBanned.list.filter(visitor => visitor.name.indexOf(filter) !== -1));
-console.log(visitors);
+
     return(
         <>
             <div className="input-group">
@@ -27,7 +27,7 @@ console.log(visitors);
                     {visitors.map(visitor => <tr>
                         <td>{visitor.name}</td>
                         <td>{visitor.banReason}</td>
-                        <td>{visitor.updatedAt}</td>
+                        <td>{visitor.banUpdatedAt}</td>
                         <td>
                             <div className="actions">
                                 <button className="button" onClick={() => setBan(visitor._id, 0)}>unban</button>

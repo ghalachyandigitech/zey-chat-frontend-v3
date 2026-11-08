@@ -43,8 +43,6 @@ export async function userPartnerLogin(data){
     const {error} = Joi.object({key, status})
         .validate(data, {abortEarly: false});
 
-    console.log(data)
-    console.log(error)
     if(error) return false;
 
     const [responseError, {accessToken}] = await Axios.post('users/user-partner-login', data);

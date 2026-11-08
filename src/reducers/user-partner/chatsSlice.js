@@ -38,15 +38,6 @@ export const chatsSlice = createSlice({
                 if(chat._id === payload._id) chat.companionStatus = payload.companionStatus;
             });
         },
-        setCompanionBanUpdatedAt: (state, {payload}) => {
-            const {userPartnerId, companionBanUpdatedAt} = payload;
-
-            Object.values(state.list).forEach(chat => {
-                if(chat.companionId === userPartnerId){
-                    chat.companionBanUpdatedAt = companionBanUpdatedAt
-                }
-            });
-        },
         setDraft: (state, {payload}) => {
             const {collection, _id, draft} = payload;
 
@@ -85,6 +76,5 @@ export const chatsSlice = createSlice({
     },
 });
 
-export const {setChat, setCompanionStatus, setChatStatus, setCompanionCreated, endChat, setFile, deleteChat, deleteChats,
-    setCompanionBanUpdatedAt, setDraft, updateUserPartnerId} = chatsSlice.actions;
+export const {setChat, setCompanionStatus, setChatStatus, setCompanionCreated, endChat, setFile, deleteChat, deleteChats, setDraft, updateUserPartnerId} = chatsSlice.actions;
 export default chatsSlice.reducer;
