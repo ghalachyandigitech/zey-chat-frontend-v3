@@ -52,18 +52,18 @@ const UserPartner = () => {
     const [, segment1, segment2] = pathname.split('/');
     const {partnerId, userPartnerId, role, partnerName, config} = useSelector(state => state.userPartner);
 
-    const userPartnersMenus = {
-        'home': <div className={`item ${[undefined, '', 'home'].includes(segment2) ? 'active' : ''}`} onClick={() => navigate(`/${segment1}`)}><HomeSvg />home</div>,
-        'visitors': <div className={`item ${segment2 === 'visitors' ? 'active' : ''}`} onClick={() => navigate(`/${segment1}/visitors`)}><VisitorsSvg />visitors</div>,
-        'history': <div className={`item ${segment2 === 'history' ? 'active' : ''}`} onClick={() => navigate(`/${segment1}/history`)}><HistorySvg />history</div>,
-        'agents': <div className={`item ${segment2 === 'agents' ? 'active' : ''}`} onClick={() => navigate(`/${segment1}/agents`)}>agents</div>,
-        'shortcuts': <div className={`item ${segment2 === 'shortcuts' ? 'active' : ''}`} onClick={() => navigate(`/${segment1}/shortcuts`)}>shortcuts</div>,
-        'visitors-banned': <div className={`item ${segment2 === 'visitors-banned' ? 'active' : ''}`} onClick={() => navigate(`/${segment1}/visitors-banned`)}>banned</div>,
-        'widgets': <div className={`item ${segment2 === 'widgets' ? 'active' : ''}`} onClick={() => navigate(`/${segment1}/widgets`)}>widgets</div>,
-        'profile': <div className={`item ${segment2 === 'profile' ? 'active' : ''}`} onClick={() => navigate(`/${segment1}/profile`)}>personal</div>
+    const menus = {
+        'home': <div key="home" className={`item ${[undefined, '', 'home'].includes(segment2) ? 'active' : ''}`} onClick={() => navigate(`/${segment1}`)}><HomeSvg />home</div>,
+        'visitors': <div key="visitors" className={`item ${segment2 === 'visitors' ? 'active' : ''}`} onClick={() => navigate(`/${segment1}/visitors`)}><VisitorsSvg />visitors</div>,
+        'history': <div key="history" className={`item ${segment2 === 'history' ? 'active' : ''}`} onClick={() => navigate(`/${segment1}/history`)}><HistorySvg />history</div>,
+        'agents': <div key="agents" className={`item ${segment2 === 'agents' ? 'active' : ''}`} onClick={() => navigate(`/${segment1}/agents`)}>agents</div>,
+        'shortcuts': <div key="shortcuts" className={`item ${segment2 === 'shortcuts' ? 'active' : ''}`} onClick={() => navigate(`/${segment1}/shortcuts`)}>shortcuts</div>,
+        'visitors-banned': <div key="visitors-banned" className={`item ${segment2 === 'visitors-banned' ? 'active' : ''}`} onClick={() => navigate(`/${segment1}/visitors-banned`)}>banned</div>,
+        'widgets': <div key="widgets" className={`item ${segment2 === 'widgets' ? 'active' : ''}`} onClick={() => navigate(`/${segment1}/widgets`)}>widgets</div>,
+        'profile': <div key="profile" className={`item ${segment2 === 'profile' ? 'active' : ''}`} onClick={() => navigate(`/${segment1}/profile`)}>personal</div>
     };
 
-    const userPartnerPopUps = {
+    const popUps = {
         'team': <Team />,
         'ban': <Ban />,
         'hot-keys': <HotKeys />,
@@ -101,7 +101,7 @@ const UserPartner = () => {
             <SocketController config={{partnerId, userPartnerId, role}} buttonLogoutRef={buttonLogoutRef} />
             <ChatPopUp />
             <WindowNotifications />
-            <PopUp routes={config.popUpRoutes.reduce((a, n) => {a[n] = userPartnerPopUps[n]; return a}, {})} />
+            <PopUp routes={config.popUpRoutes.reduce((a, n) => {a[n] = popUps[n]; return a}, {})} />
             <div className="left-menu">
                 <div className="header">
                     <Status statusFlag={config.status}/>
@@ -111,8 +111,8 @@ const UserPartner = () => {
                 {config.chatRequests && <ChatRequests chatRequestsRef={chatRequestsRef}/>}
                 {config.transferRequests && <TransferRequests />}
                 <hr />
-                {config.leftMenu.menu.map(name => userPartnersMenus[name])}
-                <SettingsMenu menus={config.leftMenu.settingsMenu.map(name => userPartnersMenus[name])} />
+                {config.leftMenu.menu.map(name => menus[name])}
+                <SettingsMenu menus={config.leftMenu.settingsMenu.map(name => menus[name])} />
                 <TeamMenu />
             </div>
             <div className="container">

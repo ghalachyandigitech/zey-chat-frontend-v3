@@ -21,10 +21,10 @@ const Index = () => {
                 <InputSearch name="filter" value={filter} setValue={setFilter} />
             </div>
             <div className="visitors-view">
-                {visitorsTypes.map(([role, name]) => (
-                    <VisitorsRole role={role} name={name} viewChat={role === 'served'} filter={filter}
+                {visitorsTypes.map(([role, name]) =>
+                    <VisitorsRole key={role} role={role} name={name} viewChat={role === 'served'} filter={filter}
                                   online={['incoming', 'assigned', 'served'].includes(role)} />
-                ))}
+                )}
             </div>
         </>
     )

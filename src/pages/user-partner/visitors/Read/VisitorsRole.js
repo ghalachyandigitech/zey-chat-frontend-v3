@@ -34,7 +34,7 @@ const VisitorsRole = ({role, name, online, viewChat, filter}) => {
                     </tr></thead>
                     <tbody>
                         {visitors.slice(0, count).map(visitor =>
-                            <tr onClick={() => {
+                            <tr key={visitor._id} onClick={() => {
                                 if(viewChat){
                                     dispatch(awaitChat({_id: visitor.chatId}));
                                     dispatch(setView({

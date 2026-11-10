@@ -19,12 +19,12 @@ const ChatsViews = () => {
                 <ViewEyeSvg onButtonClick={() => userPartnerChatsEntries.length && setCover(!cover)} />
                 {cover && <div className="body">
                     {userPartnerChatsEntries.map(([userPartnerId, {name, chats}]) =>
-                        <>
-                            <span onClick={() => setUserPartners({...userPartners, [userPartnerId]: !userPartners[userPartnerId]})}>
+                        <div>
+                            <span className="name" onClick={() => setUserPartners({...userPartners, [userPartnerId]: !userPartners[userPartnerId]})}>
                                 {name} <ArrowSvg rotateUp={userPartners[userPartnerId]}/>
                             </span>
                             {userPartners[userPartnerId] && Object.values(chats).map(chat =>
-                                <div>
+                                <div className="list" key={chat._id}>
                                     <span onClick={() => {
                                         setCover(false);
                                         dispatch(awaitChat({_id: chat._id, collection: 'waiting'}));
@@ -35,7 +35,7 @@ const ChatsViews = () => {
                                     }} />
                                 </div>
                             )}
-                        </>
+                        </div>
                     )}
                 </div>}
             </div>

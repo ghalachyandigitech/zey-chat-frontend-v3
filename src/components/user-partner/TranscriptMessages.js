@@ -25,7 +25,7 @@ const TranscriptMessages = ({companionId}) => {
                 }
 
                 return (
-                    <div className={side === 'center' ? 'message1-center' : `message1 message1-${side}`}>
+                    <div key={_id} className={side === 'center' ? 'message1-center' : `message1 message1-${side}`}>
                         <div>
                             <div style={{direction: REG_EXP_PERSIAN_FONT.test(message[0]) ? 'rtl' : 'ltr'}}>{message}</div>
 

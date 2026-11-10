@@ -18,7 +18,7 @@ export async function auth(urlSegment){
     if(!accessToken) return false;
 
     const [error, payload] = await Axios.get('user-partners/sign-in', {headers: {"Authorization": `Bearer ${accessToken}`}});
-    console.log(payload);
+
     if(Object.keys(error).length) return false;
 
     Axios.defaults.headers['Authorization'] = `Bearer ${accessToken}`;

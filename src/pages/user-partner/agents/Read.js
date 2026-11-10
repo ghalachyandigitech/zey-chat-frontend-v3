@@ -17,20 +17,6 @@ const Read = () => {
     const {partnerRequest} = useSelector(state => state.profile);
     const {createAgentButton, deleteAgentButton, inactivateUserButton} = config;
 
-    console.log(agents);
-
-    // useEffect(() => {
-    //     (async () => {
-    //         const [error, {agents}] = await get();
-    //
-    //         setLoad(false);
-    //
-    //         if(Object.keys(error).length) return setFlashPopUp('server error');
-    //
-    //         dispatch(setAgents(agents));
-    //     })()
-    // }, []);
-
     return (
         <>
             <div className="input-group">
@@ -55,7 +41,7 @@ const Read = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {Object.values(agents).map(agent => <tr>
+                        {Object.values(agents).map(agent => <tr key={agent.userPartnerId}>
                             <td>{agent.name}</td>
                             <td>{agent.email}</td>
                             <td>{USER_PARTNERS_ROLES[agent.role]}</td>

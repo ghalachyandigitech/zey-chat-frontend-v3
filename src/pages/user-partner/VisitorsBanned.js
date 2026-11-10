@@ -3,10 +3,10 @@ import {useSelector} from "react-redux";
 import {setBan} from "../../controllers/user-partner/UserPartner";
 import InputSearch from "../../components/InputSearch";
 
-//todo backendum visitori mej created key ka bayc vonc vor chi ogtagorcvum
 const VisitorsBanned = () => {
     const [filter, setFilter] = useState('');
-    const visitors = useSelector(state => state.visitorsBanned.list.filter(visitor => visitor.name.indexOf(filter) !== -1));
+    let visitors = useSelector(state => state.visitorsBanned.list);
+    visitors = visitors.filter(visitor => visitor.name.indexOf(filter) !== -1);
 
     return(
         <>
@@ -24,7 +24,7 @@ const VisitorsBanned = () => {
                     </tr>
                     </thead>
                     <tbody>
-                    {visitors.map(visitor => <tr>
+                    {visitors.map(visitor => <tr key={visitor._id}>
                         <td>{visitor.name}</td>
                         <td>{visitor.banReason}</td>
                         <td>{visitor.banUpdatedAt}</td>

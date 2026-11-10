@@ -3,7 +3,7 @@ const Select = ({name, value, onChange, error, options, className='input-default
         <div className={`select ${className}`}>
             <label>{name}</label>
             <select value={value} onChange={e => onChange(e.target.value)}>
-                {options.map(([v, n]) => <option value={v}>{n}</option>)}
+                {options.map(([v, n]) => <option key={v} value={v}>{n}</option>)}
             </select>
             {error && <span className="error">{error}</span>}
         </div>

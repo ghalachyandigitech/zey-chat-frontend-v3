@@ -1,6 +1,7 @@
 import {useDispatch, useSelector} from "react-redux";
 import {setBan} from "../../controllers/user-partner/UserPartner";
 import {setPopUp} from "../../reducers/popUpSlice";
+import {setFlashPopUp} from "../../reducers/flashPopUpSlice";
 
 const BanButton = ({companionId}) => {
     const dispatch = useDispatch();
@@ -15,6 +16,7 @@ const BanButton = ({companionId}) => {
                     dispatch(setPopUp(['ban', {userPartnerId: companionId}]))
                 }else if(banButtonAction === 'unban'){
                     setBan(companionId, 0);
+                    dispatch(setFlashPopUp('unban request sent'))
                 }
             }}>{banButtonAction}</button>}
         </>

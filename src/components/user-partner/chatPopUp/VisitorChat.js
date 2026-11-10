@@ -47,7 +47,8 @@ const VisitorChat = ({_id, messaging, collection, companionId}) => {
                              buttons={[
                                  <BanButton companionId={companionId}/>,
                                  <VisitorInfoButtons _id={_id} collection={collection} />
-                             ]}/>
+                             ]}
+                        />
                     </>,
                     <div className="past-chats">
                         <PastChats companionId={companionId} chatsPast={visitor.chatsPast} />

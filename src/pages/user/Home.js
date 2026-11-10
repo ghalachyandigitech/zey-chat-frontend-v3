@@ -53,7 +53,7 @@ const Home = () => {
             <h1>dashboards</h1>
             <div className="user-partners">
                 {Object.entries(userPartners).map(([_id, userPartner]) =>
-                    <div>
+                    <div key={_id}>
                         {userPartner.role > 1 && <Select isClearable={false} isSearchable={false}
                             options={options}
                             value={{value: userPartner.loginStatus}}

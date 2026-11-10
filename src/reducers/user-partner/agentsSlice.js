@@ -12,7 +12,7 @@ export const agentsSlice = createSlice({
             const agent = state.list[userPartnerId];
             if(agent){
                 agent.name = name;
-                agent.email = email;
+                email && (agent.email = email);
                 agent.role = role || agent.role;
                 agent.limit = limit;
             }

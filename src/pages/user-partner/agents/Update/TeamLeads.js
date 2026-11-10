@@ -26,10 +26,7 @@ const TeamLeads = () => {
                 setLoad(true);
                 setError({});
 
-                const [error, payload] = await teamLeadsUpdate({
-                    userPartnerId: popUpPayload.userPartnerId,
-                    name, limit
-                });
+                const [error, payload] = await teamLeadsUpdate({userPartnerId: popUpPayload.userPartnerId, name, limit});
 
                 setLoad(false);
 

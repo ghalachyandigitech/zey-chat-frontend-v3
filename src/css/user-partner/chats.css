@@ -5,9 +5,11 @@
     align-items: end;
     width: 100%;
 }
+
 .chats > .item > .container > svg{
     cursor: pointer;
 }
+
 .chats > .item > .container > svg:hover{
     fill: red;
 }
@@ -26,6 +28,7 @@
     z-index: 1;
     overflow: hidden;
 }
+
 .chats > .item-min{
     height: 26px !important;
 }
@@ -38,6 +41,7 @@
     border-radius: 50%;
     background-color: brown;
 }
+
 .chats > .item > .container > .name{
     overflow: hidden;
     white-space: nowrap;
@@ -84,7 +88,7 @@
     position: relative;
     cursor: pointer;
 }
-.chats-views > .container .body > span{
+.chats-views .name{
     display: flex;
     align-items: center;
     height: 35px;
@@ -92,20 +96,24 @@
     color: white;
     padding-left: 5px;
 }
-.chats-views .container span > svg{
+
+.chats-views .name svg{
     margin-left: auto;
 }
-.chats-views .container > .body > div{
+
+.chats-views .list{
     display: flex;
     align-items: center;
 }
-.chats-views .container > .body > div > span{
-    width: 100%;
-    padding-left: 5px;
-}
-.chats-views .container > .body > div > span:hover{
+
+.chats-views .list > span:hover{
     background-color: rgba(128,128,128,.3);
 }
+
+.chats-views .list > span{
+    flex: 1;
+}
+
 .chats-views .container > .body{
     overflow: hidden;
     min-width: 200px;
@@ -117,7 +125,8 @@
     border-radius: 5px;
     box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
 }
-.chats-views .container > .body > div > svg:hover{
+
+.chats-views .list > svg:hover{
     fill: red;
 }
 
@@ -130,6 +139,7 @@
     display: flex;
     flex-direction: column;
 }
+
 .chat-container > .body{
     display: flex;
     border: 1px solid;
@@ -138,14 +148,17 @@
     gap: 10px;
     min-height: 0;
 }
+
 .chat-container .past-chats{
     display: flex;
     gap: 10px;
     width: 100%;
 }
+
 .chat-container .past-chats .table{
     flex: 3 !important;
 }
+
 .chat-container .past-chats .view{
     flex: 7;
     display: flex;
@@ -275,4 +288,3 @@
 .chat .messaging-textarea-error{
     border: 1.5px solid red;
 }
-

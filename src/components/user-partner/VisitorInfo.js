@@ -34,7 +34,7 @@ const VisitorInfo = ({userPartner, chatsPastLength, buttons, chatCreated}) => {
                 </div>
                 <div className="buttons">{buttons}</div>
                 <div className="referrers">
-                    {userPartner.referrers && userPartner.referrers.map(referrer => <div>{referrer}</div>)}
+                    {userPartner.referrers && userPartner.referrers.map(referrer => <div key={Math.random()}>{referrer}</div>)}
                 </div>
                 <div className="location-info">
                     <div><b className="title">location:</b><span className="description">{userPartner.location}</span></div>

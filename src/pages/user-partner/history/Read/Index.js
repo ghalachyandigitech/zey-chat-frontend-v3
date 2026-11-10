@@ -94,7 +94,7 @@ const Index = () => {
                         <thead><tr><th>visitor id</th><th>agent</th><th>date</th><th>rating</th></tr></thead>
                         <tbody>
                             {!load && chats.map(chat =>
-                                <tr onClick={async () => {
+                                <tr key={chat._id} onClick={async () => {
                                     setHistoryChat('loading');
 
                                     const [

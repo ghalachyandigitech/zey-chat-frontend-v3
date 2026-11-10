@@ -10,8 +10,8 @@ const Team = () => {
     const list = useSelector(state => state.agents.list);
     const {teamChats, chatWith} = useSelector(state => state.userPartner.config);
     const agents = Object.entries(list);
-    const chats = useSelector(state => state.visitors.list);
-    const served = useSelector(state => state.visitors.served);
+    const chats = useSelector(state => state.chats.list);
+    const served = useSelector(state => state.visitors.roles['served'][1]);
 
     return (
         <div className="table">
@@ -25,7 +25,7 @@ const Team = () => {
                 </tr></thead>
                 <tbody>
                 {agents.map(([userPartnerId, {role, name, status, limit}]) =>
-                    <tr>
+                    <tr key={userPartnerId}>
                         <td>{name}</td>
                         <td>{USER_PARTNERS_ROLES[role]}</td>
                         <td>{USER_PARTNERS_STATUSES[status]}</td>
