@@ -18,7 +18,7 @@ const PastChats = ({chatsPast, companionId}) => {
                         <thead><tr><th>agent</th><th>time</th></tr></thead>
                         <tbody>
                         {chatsPast.map(chat =>
-                            <tr onClick={async () => {
+                            <tr key={chat._id} onClick={async () => {
                                 setLoad(true);
 
                                 const [error, payload] = await getTranscript(chat._id);

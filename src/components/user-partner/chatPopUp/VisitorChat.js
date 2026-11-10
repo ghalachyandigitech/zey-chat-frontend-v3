@@ -45,8 +45,8 @@ const VisitorChat = ({_id, messaging, collection, companionId}) => {
                         <VisitorInfo userPartner={visitor.userPartner} chatsPastLength={chatsPastLength}
                              chatCreated={<ChatCreated _id={_id} collection={collection}/>}
                              buttons={[
-                                 <BanButton companionId={companionId}/>,
-                                 <VisitorInfoButtons _id={_id} collection={collection} />
+                                 <BanButton key="ban" companionId={companionId}/>,
+                                 <VisitorInfoButtons key="file" _id={_id} collection={collection} />
                              ]}
                         />
                     </>,

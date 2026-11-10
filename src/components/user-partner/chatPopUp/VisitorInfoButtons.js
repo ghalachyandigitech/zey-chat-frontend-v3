@@ -18,7 +18,7 @@ const TransferButton = ({_id, collection}) => {
 
     return(
         <>
-            {transferButtonAction && <button className={transferButtonAction === 'transfer-sent' && 'button-wait'} onClick={() => {
+            {transferButtonAction && <button className={transferButtonAction === 'transfer-sent' ? 'button-wait' : ''} onClick={() => {
                 if(transferButtonAction === 'transfer'){
                     setTransfer(_id);
                     dispatch(setChatStatus({_id, status: 3}));

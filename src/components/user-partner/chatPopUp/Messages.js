@@ -37,11 +37,11 @@ const Messages = ({_id, collection, messagesStatus, banUpdatedAt}) => {
         }}>
             <div>{pageLoad && <LoadingGif width="40"/>}</div>
             {messages && messages.map(({id, text, file, date, hashId, side}) =>
-                <div className={side}>
+                <div key={id} className={side}>
                     <span> </span>
-                    <div className={`message`}>
+                    <div className='message'>
                         {file[0] && <div className="file"><File value={file} /></div>}
-                        <span className={text[0] && REG_EXP_PERSIAN_FONT.test(text[0][0]) && 'rtl'}>
+                        <span className={text[0] && REG_EXP_PERSIAN_FONT.test(text[0][0]) ? 'rtl' : ''}>
                             {text.map(t => REG_EXP_URL_DETECT.test(t) ? <a style={{display: 'contents'}} target="_blank" href={t}>{t}</a> : t)}
                         </span>
                         <span className="date">

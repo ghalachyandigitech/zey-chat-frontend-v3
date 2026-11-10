@@ -10,7 +10,7 @@ const Header = ({_id, collection}) => {
     const {name, styles: {headerLeftColor, headerDegree, headerRightColor}} = chat.widget;
 
     return (
-        <div className={`header`} style={{background: !headerLeftColor && 'black' ||
+        <div className='header' style={{background: !headerLeftColor && 'black' ||
                 `linear-gradient(${headerDegree}deg, ${headerLeftColor}, ${headerRightColor})`
             }}>
             <span>{chat.companionName}</span>

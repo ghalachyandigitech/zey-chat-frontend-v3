@@ -27,14 +27,3 @@ Axios.interceptors.response.use(
         return Response({error});
     }
 );
-
-Axios.interceptors.request.use(
-    (config) => {
-        // config.header.set();
-        // config.headers['Authorization'] = `Bearer ${token.split('|')[0]}`;
-        return config;
-    },
-    (error) => {
-        // return Promise.reject(error);
-    }
-);
