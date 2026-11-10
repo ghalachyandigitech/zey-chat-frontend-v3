@@ -29,9 +29,6 @@ export const agentsSlice = createSlice({
         setAgents: (state, {payload}) => {
             state.list = payload;
         },
-        addAgents: (state, {payload}) => {
-            state.list[payload._id] = payload;
-        },
         updateStatus: (state, {payload}) => {
             const {status, userPartnerId} = payload;
 

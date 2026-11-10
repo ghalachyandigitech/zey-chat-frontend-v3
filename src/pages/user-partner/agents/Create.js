@@ -1,6 +1,6 @@
 import {create} from "../../../controllers/user-partner/AgentsController";
 import {useState} from "react";
-import {addAgents} from "../../../reducers/user-partner/agentsSlice";
+import {setAgent} from "../../../reducers/user-partner/agentsSlice";
 import {setPopUp} from "../../../reducers/popUpSlice";
 import {setFlashPopUp} from "../../../reducers/flashPopUpSlice";
 import {useDispatch} from "react-redux";
@@ -36,7 +36,7 @@ const Create = () => {
 
                     if(Object.keys(error).length) return setError(error);
 
-                    dispatch(addAgents(payload));
+                    dispatch(setAgent(payload));
                     dispatch(setPopUp([0]));
                     dispatch(setFlashPopUp('agents created'));
                 }}>create</button>}
