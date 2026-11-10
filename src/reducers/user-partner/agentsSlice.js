@@ -30,7 +30,7 @@ export const agentsSlice = createSlice({
             state.list = payload;
         },
         addAgents: (state, {payload}) => {
-            state.list.push(payload);
+            state.list[payload._id] = payload;
         },
         updateStatus: (state, {payload}) => {
             const {status, userPartnerId} = payload;
