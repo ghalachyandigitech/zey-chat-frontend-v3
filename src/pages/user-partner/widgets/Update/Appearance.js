@@ -167,7 +167,7 @@ const Appearance = () => {
                                    className="input-number" type="number" min={0} max={360}/>
                             <div className="background-gradients">
                                 {Object.keys(gradients).map(key =>
-                                    <label style={{background: gradients[key]}} className={styles.widgetGradientType === key ? 'inset' : 'outset'}>
+                                    <label key={key} style={{background: gradients[key]}} className={styles.widgetGradientType === key ? 'inset' : 'outset'}>
                                         <input hidden type="radio" checked={styles.widgetGradientType === key}
                                                onChange={() => dispatch(setStyle(['widgetGradientType', key]))} />
                                     </label>

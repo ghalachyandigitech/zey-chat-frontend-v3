@@ -42,7 +42,7 @@ const Read = () => {
                 <table>
                     <thead><tr><th>name</th><th>admins</th><th>actions</th></tr></thead>
                     <tbody>
-                        {partners.map(partner => <tr>
+                        {partners.map(partner => <tr key={partner._id}>
                             <td>{partner.name}</td>
                             <td>{partner.userAdminsIds.map(_id => userAdmins[_id]).join(', ')}</td>
                             <td>

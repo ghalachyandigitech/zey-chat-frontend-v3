@@ -36,7 +36,7 @@ const Read = () => {
                     <thead><tr><th>tag</th><th>message</th><th>actions</th></tr></thead>
                     <tbody>
                     {!load && shortcuts.map(shortcut =>
-                        <tr>
+                        <tr key={shortcut._id}>
                             <td>{shortcut.tag}</td>
                             <td>{shortcut.message}</td>
                             <td>

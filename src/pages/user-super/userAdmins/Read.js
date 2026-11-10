@@ -33,7 +33,7 @@ const Read = () => {
                     <thead><tr><th>name</th><th>email</th><th>company</th><th>phone</th><th>actions</th></tr></thead>
                     <tbody>
                         {userAdmins.map(user =>
-                            <tr>
+                            <tr key={user._id}>
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
                                 <td>{user.companyName}</td>
