@@ -13,7 +13,13 @@
     height: 42px;
     color: white;
     padding: 0 5px;
-    align-content: center;
+    gap: 3px;
+    display: flex;
+    align-items: center;
+}
+
+.pop-up .header > span{
+    margin-right: auto;
 }
 
 .pop-up .header-default{

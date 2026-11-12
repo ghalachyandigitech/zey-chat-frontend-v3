@@ -1,6 +1,7 @@
 import {useState} from "react";
 import VisitorInfo from "../../../../components/user-partner/VisitorInfo";
 import Transcript from "../../../../components/user-partner/Transcript";
+import Tabs from "../../../../components/Tabs";
 import ChatLogs from "./ChatLogs";
 import BanButton from "../../../../components/user-partner/BanButton";
 
@@ -9,24 +10,16 @@ const HistoryChat = ({chat}) => {
 
     return(
         <>
-            <div className="tabs">
-                <button onClick={() => page !== 0 ? setPage(0): ''} className={page === 0 ? 'active': ''}>
-                    transcript
-                </button>
-                <button onClick={() => page !== 1 ? setPage(1): ''} className={page === 1 ? 'active': ''}>
-                    visitor info
-                </button>
-                <button onClick={() => page !== 2 ? setPage(2): ''} className={page === 2 ? 'active': ''}>
-                    chat logs
-                </button>
-            </div>
+            <Tabs page={page} setPage={setPage} tabs={[
+                [0, 'transcript'],
+                [1, 'visitor info'],
+                [2, 'chat logs']
+            ]} />
             <div className="history-chat-body">
                 {[
                     <Transcript companionId={chat.visitor.userPartner._id}/>,
-                    <div className="visitor-info">
-                        <VisitorInfo buttons={<BanButton companionId={chat.visitor.userPartner._id}/>}
-                            userPartner={chat.visitor.userPartner} chatsPastLength={chat.visitor.chatsPast.length}/>
-                    </div>,
+                    <VisitorInfo buttons={<BanButton companionId={chat.visitor.userPartner._id}/>}
+                        userPartner={chat.visitor.userPartner} chatsPastLength={chat.visitor.chatsPast.length}/>,
                     <ChatLogs logUsers={chat.transcript.logUsers} logs={chat.transcript.logs} />
                 ][page]}
             </div>

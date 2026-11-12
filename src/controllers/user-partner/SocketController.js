@@ -1,16 +1,16 @@
 import {socket, connectSocket} from "../../Socket";
 import {useEffect} from "react";
 import {useDispatch} from "react-redux";
-import {openAwaitingChat, closeIfOpened, endChatPopUp, chatPopupClose} from "../../reducers/user-partner/chatPopupSlice";
 import {setNotification} from "../../reducers/user-partner/windowNotificationsSlice";
-import {setRequests, setRequest, deleteRequest, deleteRequests, setTransfer, setTransfers, deleteTransfer, deleteTransfers, setStatus} from "../../reducers/user-partner/profileSlice";
-import {setChatMessages, setUnread, deleteChatMessages, endChatMessages, setChatMessage, setLogUser, updateMessageByHash, setMessagesPage, deleteChatsMessages, setCompanionTyping} from "../../reducers/user-partner/chatsMessagesSlice";
-import {setView, deleteChatView, updateChatView, deleteChatsViewSaved} from "../../reducers/user-partner/chatsViewSavedSlice";
-import {deleteAgent, deleteAgents, setAgent, updateStatus} from "../../reducers/user-partner/agentsSlice";
-import {setCompanionUnread, setChatUnread, updateCompanionUnread, deleteCompanionUnread, deleteChatsUnread} from "../../reducers/user-partner/chatsUnreadSlice";
-import {setChat, setCompanionStatus, updateUserPartnerId, setCompanionCreated, endChat, setFile, deleteChat, deleteChats, setChatStatus} from "../../reducers/user-partner/chatsSlice";
-import {setVisitors, setVisitor, deleteVisitor, deleteVisitors, updateVisitor} from "../../reducers/user-partner/visitorsSlice";
+import {deleteAgents, setAgent, updateStatus} from "../../reducers/user-partner/agentsSlice";
+import {setVisitors, setVisitor, deleteVisitor, deleteVisitors} from "../../reducers/user-partner/visitorsSlice";
 import {deleteVisitorBanned, setVisitorBanned, setVisitorsBanned} from "../../reducers/user-partner/visitorsBannedSlice";
+import {setView, deleteChatView, updateChatView, deleteChatsViewSaved} from "../../reducers/user-partner/chatsViewSavedSlice";
+import {openAwaitingChat, closeIfOpened, endChatPopUp, chatPopupClose} from "../../reducers/user-partner/chatPopupSlice";
+import {setCompanionUnread, setChatUnread, updateCompanionUnread, deleteCompanionUnread, deleteChatsUnread} from "../../reducers/user-partner/chatsUnreadSlice";
+import {setRequests, setRequest, deleteRequest, deleteRequests, setTransfer, setTransfers, deleteTransfer, deleteTransfers, setStatus} from "../../reducers/user-partner/profileSlice";
+import {setChat, setCompanionStatus, updateUserPartnerId, setCompanionCreated, endChat, setFile, deleteChat, deleteChats, setChatStatus} from "../../reducers/user-partner/chatsSlice";
+import {setChatMessages, setUnread, deleteChatMessages, endChatMessages, setChatMessage, setLogUser, updateMessageByHash, setMessagesPage, deleteChatsMessages, setCompanionTyping} from "../../reducers/user-partner/chatsMessagesSlice";
 
 const SocketController = ({config, buttonLogoutRef}) => {
     const dispatch = useDispatch();

@@ -149,6 +149,5 @@ export const chatsMessagesSlice = createSlice({
     },
 });
 
-export const {setUnread, setChatMessages, setCompanionTyping, setCompanionUnread, updateCompanionUnread, setPageLoad,
-    setChatMessage, deleteChatMessages, endChatMessages, setLogUser, updateMessageByHash, setMessagesPage, deleteChatsMessages} = chatsMessagesSlice.actions;
+export const {setUnread, setChatMessages, setCompanionTyping, setPageLoad, setChatMessage, deleteChatMessages, endChatMessages, setLogUser, updateMessageByHash, setMessagesPage, deleteChatsMessages} = chatsMessagesSlice.actions;
 export default chatsMessagesSlice.reducer;

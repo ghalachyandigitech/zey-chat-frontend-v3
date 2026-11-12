@@ -14,8 +14,8 @@ const Header = ({_id, collection}) => {
                 `linear-gradient(${headerDegree}deg, ${headerLeftColor}, ${headerRightColor})`
             }}>
             <span>{chat.companionName}</span>
-            <CloseSvg onButtonClick={() => dispatch(setPopUp(['chats/end', chat]))} />
             <MinimizeSvg onButtonClick={() => dispatch(chatPopupClose())} />
+            <CloseSvg onButtonClick={() => dispatch(setPopUp(['chats/end', chat]))} />
         </div>
     )
 };

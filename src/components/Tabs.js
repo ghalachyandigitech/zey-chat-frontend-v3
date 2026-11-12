@@ -3,7 +3,7 @@ const Tabs = ({tabs, page, setPage}) => {
         <>
             <div className="tabs">
                 {tabs.map(([key, name]) =>
-                    <button key={key} onClick={() => page !== key && setPage(key)} className={page === key ? 'active' : ''}>{name}</button>
+                    <span key={key} onClick={() => page !== key && setPage(key)} className={page === key ? 'active' : ''}>{name}</span>
                 )}
             </div>
         </>

@@ -142,7 +142,7 @@ body{
 .select > select{
     height: 40px;
     border-radius: 5px;
-    background-color: #eeeeee;
+    background-color: white;
     padding: 0 12px;
     border: 2px solid;
 }
@@ -187,7 +187,7 @@ body{
     flex-wrap: wrap;
     align-items: center;
     padding-top: 10px;
-    padding-bottom: 3px;
+    padding-bottom: 10px;
 }
 
 .input-groups-column{
@@ -201,7 +201,7 @@ body{
 
 .table{
     border-radius: 5px;
-    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+    box-shadow: 0 -1px 15px 0 rgba(0, 0, 0, 0.14);
     flex: 1;
     overflow-y: auto;
     min-height: 110px;
@@ -295,25 +295,31 @@ body{
 }
 
 .tabs{
-    padding: 5px 10px 2px;
-    border-bottom: 2px solid #0f3d56;
+    padding: 5px 10px 0 10px;
+    display: flex;
+    gap: 1px;
+    border-bottom: 1px solid;
 }
 
-.tabs > button{
+.tabs > span{
     height: 30px;
     min-width: 75px;
-    background-color: #0f3d56;
-    color: white;
+    background-color: white;
+    color: #0f3d56;
+    align-content: center;
+    border-radius: 5px 5px 0 0;
+    padding: 0 5px 0 5px;
+    cursor: default;
+    text-align: center;
 }
 
 .tabs > .active{
-    opacity: 0.9;
-    border: 4px inset #396f8d;
+    border-bottom: 2px solid #0f3d56;
+    background-color: #ead7d7;
 }
 
-.tabs > button:not(.active):hover{
-    opacity: 0.9;
-    background-color: #0f3d56;
+.tabs > span:not(.active):hover{
+    background-color: rgb(240 240 240);
 }
 
 .tabs > button:first-child{

@@ -53,5 +53,5 @@ export const visitorsSlice = createSlice({
     },
 });
 
-export const {setVisitors, deleteVisitor, setRoleCount, setVisitor, updateVisitorsTimer, deleteVisitors, updateVisitor} = visitorsSlice.actions;
+export const {setVisitors, deleteVisitor, setRoleCount, setVisitor, updateVisitorsTimer, deleteVisitors} = visitorsSlice.actions;
 export default visitorsSlice.reducer;

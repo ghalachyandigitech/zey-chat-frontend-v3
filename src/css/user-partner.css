@@ -6,7 +6,7 @@
 .user-partner > .container{
     border: 1px solid red;
     flex: 1;
-    background: rgb(238, 238, 238);
+    background: white;
     display: flex;
     flex-direction: column;
 }
