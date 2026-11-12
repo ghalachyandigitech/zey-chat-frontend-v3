@@ -11,7 +11,8 @@ const PopUp = ({routes}) => {
         <div className="pop-up" style={{zIndex: 2}} onClick={e => {if(e.target.classList.contains('pop-up')) dispatch(setPopUp(0))}}>
             <div className="container">
                 <div className={`header header-${type}`}>
-                    {PAGES_NAMES[name]}<CloseSvg onButtonClick={e => e.stopPropagation() & dispatch(setPopUp(0))} />
+                    <span>{PAGES_NAMES[name]}</span>
+                    <CloseSvg onButtonClick={e => e.stopPropagation() & dispatch(setPopUp(0))} />
                 </div>
                 <div className="body">
                     {routes[name]}

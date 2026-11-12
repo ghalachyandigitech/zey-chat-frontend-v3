@@ -6,7 +6,7 @@ const ChatBackground = ({collection, _id}) => {
     const date = messages.length && messages[messages.length-1].dateFull;
     const className = collection === 'internals' ? 'black' :
         unread ? 'yellow' :
-        collection !== 'ended' && date + 10000 < Date.now() ? 'silver' : 'default';
+        collection !== 'ended' && date + 120000 < Date.now() ? 'silver' : 'default';
 
     return (
         <div className={'background background-'+className}> </div>

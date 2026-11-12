@@ -4,10 +4,18 @@ import {CloseSvg} from "../../Icons";
 import {setPopUp} from "../../reducers/popUpSlice";
 import ChatBackground from "./ChatBackground";
 import ChatUnread from "./ChatUnread";
+import {useEffect, useState} from "react";
 
 const Chats = () => {
     const dispatch = useDispatch();
     const chats = useSelector(state => state.chats.list);
+    const [iterator, setIterator] = useState(0);
+
+    useEffect(() => {
+        const intervalId = setInterval(() => setIterator(Math.random() + iterator), 60000);
+
+        return () => clearInterval(intervalId);
+    }, []);
 
     return (
         <div className="chats">
