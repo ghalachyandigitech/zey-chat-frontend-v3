@@ -10,7 +10,6 @@ function companionUnreadRangeToObject(companionUnread){
     return companionUnreadObject;
 }
 
-
 export const chatsUnreadSlice = createSlice({
     name: 'chats-unread',
     initialState: {

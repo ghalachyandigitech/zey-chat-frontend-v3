@@ -5,7 +5,7 @@ import {set, setTyping} from "../../../controllers/user-partner/MessagesControll
 import {setChatMessage} from "../../../reducers/user-partner/chatsMessagesSlice";
 import {setDraft} from "../../../reducers/user-partner/chatsSlice";
 import FileUpload1 from "../../../components/FileUpload1";
-import {REG_EXP_PERSIAN_FONT} from "../../../Constants";
+import {REG_EXP_PERSIAN_FONT, TYPING_OFF_TIMEOUT} from "../../../Constants";
 
 let typingSetTimeout = null;
 
@@ -46,7 +46,7 @@ const Messaging = ({_id, collection}) => {
         typingSetTimeout = setTimeout(() => {
             setTyping(_id, false);
             typingOff()
-        }, 5000)
+        }, TYPING_OFF_TIMEOUT)
     };
 
     function sendMessage(){

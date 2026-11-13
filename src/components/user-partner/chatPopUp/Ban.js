@@ -1,8 +1,7 @@
 import {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {setPopUp} from "../../../reducers/popUpSlice"
-import {setFlashPopUp} from "../../../reducers/flashPopUpSlice"
-import {setVisitorBanned} from "../../../reducers/user-partner/visitorsBannedSlice"
+import {setPopUp} from "../../../reducers/popUpSlice";
+import {setFlashPopUp} from "../../../reducers/flashPopUpSlice";
 import Input from "../../../components/Input";
 import {setBan} from "../../../controllers/user-partner/UserPartner";
 

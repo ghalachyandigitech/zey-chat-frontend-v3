@@ -2,7 +2,6 @@ import {useDispatch} from 'react-redux';
 import {useState} from 'react';
 import {forgotPassword} from "../../controllers/user/User";
 import {setFlashPopUp} from "../../reducers/flashPopUpSlice";
-import Input from "../../components/Input";
 import {EmailImg} from "../../Icons";
 
 const ForgotPassword = () => {

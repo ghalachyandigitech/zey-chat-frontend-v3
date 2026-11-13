@@ -1,8 +1,9 @@
 import axios from 'axios';
 import {Response} from './Controller';
+import {BASE_URL_API} from './Constants';
 
 export const Axios = axios.create({
-    baseURL: 'http://localhost:5006/api/v1',
+    baseURL: BASE_URL_API,
     headers: {
         'Content-Type': 'application/json'
     },

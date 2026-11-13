@@ -5,7 +5,6 @@ import {PAGES_NAMES} from "../Constants";
 import {VisitorsSvg, HistorySvg, HomeSvg, LogOutSvg, MenuOpenedSvg} from "../Icons";
 import {auth} from "../controllers/user-partner/UserPartner";
 import {setUserPartner, deleteUserPartner} from "../reducers/user-partner/userPartnerSlice";
-import {setAgent} from "../reducers/user-partner/agentsSlice";
 import {setProfile, deleteProfile} from "../reducers/user-partner/profileSlice";
 import {setPopUp} from "../reducers/popUpSlice";
 

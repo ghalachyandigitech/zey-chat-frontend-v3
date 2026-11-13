@@ -1,5 +1,6 @@
 import {Axios} from "../../Axios";
 import Joi from 'joi';
+import {Response} from "../../Controller";
 
 const username = Joi.string().min(3).max(32).required();
 const password = Joi.string().min(3).max(32).required();
@@ -8,16 +9,16 @@ export async function login(data){
     const {error} = Joi.object({username, password})
         .validate(data, {abortEarly: false});
 
-    if(error) return [error.details.reduce((e, i) => {e[i.context.key] = i.message; return e}, {})];
+    if(error) return Response({error});
 
     const [errors, {accessSToken, user}] = await Axios.post('user-super/login', data);
 
-    if(Object.keys(errors).length) return [errors, {}];
+    if(Object.keys(errors).length) return Response({error: errors});
 
     localStorage.setItem('accessSToken', accessSToken);
     Axios.defaults.headers['Authorization'] = `Bearer ${accessSToken}`;
 
-    return [{}, user];
+    return Response({payload: user});
 }
 
 export function home(){

@@ -11,6 +11,7 @@ import {setCompanionUnread, setChatUnread, updateCompanionUnread, deleteCompanio
 import {setRequests, setRequest, deleteRequest, deleteRequests, setTransfer, setTransfers, deleteTransfer, deleteTransfers, setStatus} from "../../reducers/user-partner/profileSlice";
 import {setChat, setCompanionStatus, updateUserPartnerId, setCompanionCreated, endChat, setFile, deleteChat, deleteChats, setChatStatus} from "../../reducers/user-partner/chatsSlice";
 import {setChatMessages, setUnread, deleteChatMessages, endChatMessages, setChatMessage, setLogUser, updateMessageByHash, setMessagesPage, deleteChatsMessages, setCompanionTyping} from "../../reducers/user-partner/chatsMessagesSlice";
+import {CHAT_STATUS_TO_COLLECTION} from "../../Constants";
 
 const SocketController = ({config, buttonLogoutRef}) => {
     const dispatch = useDispatch();
@@ -31,7 +32,7 @@ const SocketController = ({config, buttonLogoutRef}) => {
 
             const chat = {
                 _id: chatInfo._id,
-                collection: collection ? collection : ['', 'waiting', 'served', 'served', 'internals'][chatInfo.status],
+                collection: collection ? collection : CHAT_STATUS_TO_COLLECTION[chatInfo.status],
                 status: chatInfo.status,
                 file: chatInfo.file,
                 draft: '',

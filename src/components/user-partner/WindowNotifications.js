@@ -16,7 +16,7 @@ const WindowNotifications = () => {
     const dispatch = useDispatch();
     const {messageFlag, requestFlag} = useSelector(state => state.profile);
     const name = useSelector(state => state.windowNotifications.name);
-console.log(messageFlag)
+
     useEffect(() => {
         if(name){
             if(messageFlag && name === 'message') notification('message');

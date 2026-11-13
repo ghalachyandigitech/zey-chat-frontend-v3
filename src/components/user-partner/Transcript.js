@@ -1,4 +1,4 @@
-import { usePDF } from 'react-to-pdf';
+import {usePDF} from 'react-to-pdf';
 import {UploadSvg} from "../../Icons";
 import TranscriptMessages from "./TranscriptMessages";
 

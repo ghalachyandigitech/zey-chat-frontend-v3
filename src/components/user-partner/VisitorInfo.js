@@ -1,16 +1,17 @@
-import {useState, useEffect} from "react";
+import {useState} from "react";
 import {useDispatch} from "react-redux";
 import {updateNote} from "../../controllers/user-partner/UserPartner";
 import {setFlashPopUp} from "../../reducers/flashPopUpSlice";
 import Textarea from "../Textarea";
 import {LoadingGif} from "../../Icons";
+import {NOTE_SAVE_TIMEOUT} from "../../Constants";
 
 let noteTimeoutId = null;
 
 const VisitorInfo = ({userPartner, chatsPastLength, buttons, chatCreated}) => {
     const dispatch = useDispatch();
-
     const [note, setNote] = useState(userPartner ? userPartner.note : '');
+
     return (
         <div className="visitor-info">
             {!userPartner && <LoadingGif /> || <>
@@ -20,7 +21,7 @@ const VisitorInfo = ({userPartner, chatsPastLength, buttons, chatCreated}) => {
                     noteTimeoutId = setTimeout(async () => {
                         const [error] = await updateNote(value, userPartner._id);
                         if(!Object.keys(error).length) dispatch(setFlashPopUp('note updated'));
-                    }, 2000);
+                    }, NOTE_SAVE_TIMEOUT);
                 }}/>
                 <div className="user-partner-info">
                     <div><div>{userPartner.visits}</div><div>past visits</div></div>

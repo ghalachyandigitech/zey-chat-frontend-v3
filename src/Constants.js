@@ -11,6 +11,14 @@ export const VIDEO_EXT = ['mp4', 'video/mp4'];
 export const PLATFORMS = ['windows', 'android', 'iphone', 'mac']; //todo image-ner@ kara stex pahvi
 export const BROWSERS = ['edg', 'opr', 'firefox', 'fxios', 'chrome', 'safari']; //todo image-ner@ kara stex pahvi
 export const REG_EXP_URL_DETECT = /(https?:\/\/[^\s]+|www\.[^\s]+(?:\.[^\s]+)+)/g;
+export const CHATS_UPDATE_INTERVAL = 60000;
+export const CHAT_TO_INVISIBLE_TIMEOUT = 120000;
+export const CHAT_CREATED_UPDATE_INTERVAL = 60000;
+export const NOTE_SAVE_TIMEOUT = 2000;
+export const TYPING_OFF_TIMEOUT = 5000;
+export const CHAT_STATUS_TO_COLLECTION = {1: 'waiting', 2: 'served', 3: 'served', 4: 'internals'};
+export const BASE_URL = 'http://localhost:5006/';
+export const BASE_URL_API = BASE_URL + 'api/v1';
 
 export const visitorsTypes = [
     ['incoming', 'incoming website visitors'],
